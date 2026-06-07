@@ -131,7 +131,8 @@ Brought in from before or outside the main hackathon build window. **Disclosed =
 ```bash
 git clone https://github.com/CrashPine/BlueprintStudio.git
 cd BlueprintStudio
-docker compose up --build
+docker compose pull && docker compose up   # pre-built image on Docker Hub
+# fallback if pull fails: docker compose up --build
 # → http://localhost:8000 → Load demo (no keys)
 # → Upload data/raw_floorplans/F2_original.png with keys for live parse
 curl http://localhost:8000/health

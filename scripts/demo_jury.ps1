@@ -41,8 +41,14 @@ Write-Host "========================================" -ForegroundColor Yellow
 Write-Host ""
 
 if (-not $SkipDocker) {
-    Write-Host "[1/6] Starting Docker..." -ForegroundColor Cyan
-    docker compose up -d --build
+    Write-Host "[1/6] Starting Docker (pull pre-built image, no local build)..." -ForegroundColor Cyan
+    docker compose pull app 2>$null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  Pull failed — building locally (10–20 min)..." -ForegroundColor Yellow
+        docker compose up -d --build
+    } else {
+        docker compose up -d
+    }
     Wait-Healthy
 } else {
     Wait-Healthy -Seconds 15
@@ -134,7 +140,7 @@ Write-Host "  Main UI:    $Base"
 Write-Host "  3D Twin:    $Base/static/twin.html"
 Write-Host "  Roadmap:    $Base/static/roadmap.html"
 Write-Host "  API docs:   $Base/docs"
-Write-Host "  Honesty:    https://github.com/CrashPine/BlueprintStudio/blob/main/HONESTY.md"
+Write-Host "  Honesty:    https://github.com/z1nare/flowdraft/blob/main/HONESTY.md"
 
 Write-Host ""
 Write-Host "[6/6] Done. Stop with:  docker compose down" -ForegroundColor Green

@@ -17,10 +17,17 @@ One graph schema. Five diagram types. Built for HK PropTech and BEEO 2026.
 ```bash
 git clone https://github.com/CrashPine/BlueprintStudio.git
 cd BlueprintStudio
-docker compose up --build
+docker compose pull    # pre-built image on Docker Hub (~2–5 min download)
+docker compose up
 ```
 
-First build takes **10–20 minutes** (downloads Python ML stack). Later starts are seconds.
+**Why not always build?** The image is large (PyTorch, OpenCV, spaCy, …). Jurors should **pull** the published image — startup is ~30 seconds after download.
+
+If `pull` fails (offline / image not published yet), build locally instead:
+
+```bash
+docker compose up --build   # first time: 10–20 minutes
+```
 
 ### 2. Open the app
 

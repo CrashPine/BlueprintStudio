@@ -1,7 +1,9 @@
 services:
   app:
+    # Jurors: `docker compose pull && docker compose up` (no build) once this image is on Docker Hub.
+    # Maintainers: run `.\scripts\publish_docker.ps1` after `docker login`.
+    image: crashpine/blueprintstudio:latest
     build: .
-    image: flowdraft:latest
     container_name: flowdraft
     ports:
       - "8000:8000"
