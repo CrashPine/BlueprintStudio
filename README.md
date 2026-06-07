@@ -1,4 +1,6 @@
-# FlowDraft × ArchDraft
+# BlueprintStudio
+business video - https://www.youtube.com/watch?v=tV7Kt7pwTSg
+tech video - https://youtu.be/ZCjis2257dM
 
 **Upload a Hong Kong floor plan → labeled rooms + m² → instant property valuation + BEEO-ready compliance.**
 
