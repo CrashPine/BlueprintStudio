@@ -1,0 +1,39 @@
+# BEC / datacentre thresholds — deterministic checks only (M3)
+# Source: BEC 2024 TG + industry PUE targets (order-of-magnitude for hackathon)
+
+pue:
+  clause: PUE-DC-01
+  target_industry: 1.5
+  target_good: 1.2
+  description: "Power Usage Effectiveness = total facility / IT load"
+
+equipment_rules:
+  - clause: BEC-CHILLER-COP
+    applies_to: [chiller]
+    metric: COP
+    op: ">="
+    threshold: 5.0
+    unit: ratio
+    description: "Water-cooled chiller minimum COP (illustrative)"
+
+  - clause: BEC-CRAC-POWER
+    applies_to: [crac, crah]
+    metric: rated_power_kW
+    op: "<="
+    threshold: 60
+    unit: kW
+    description: "Per-unit CRAH/CRAC nameplate cap for demo sizing"
+
+  - clause: BEC-PUMP-POWER
+    applies_to: [pump]
+    metric: rated_power_kW
+    op: "<="
+    threshold: 55
+    unit: kW
+    description: "CHW pump motor size check"
+
+finance:
+  tariff_hkd_per_kwh: 1.2
+  hours_per_year: 8760
+  containment_pue_delta: 0.05
+  chw_temp_raise_pue_delta: 0.03

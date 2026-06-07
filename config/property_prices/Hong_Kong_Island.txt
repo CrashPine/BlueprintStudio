@@ -1,0 +1,27 @@
+| Estate               | Price (HK$/ft² SFA) | Weekly Change |
+| -------------------- | ------------------- | ------------- |
+| Taikoo Shing         | 17,316              | -2.3%         |
+| South Horizons       | 14,037              | -0.2%         |
+| Residence Bel-Air    | 25,405              | -3.46%        |
+| Kornhill             | 15,137              | +4.48%        |
+| Heng Fa Chuen        | 13,841              | -4.11%        |
+| Grand Promenade      | 20,157              | +6.8%         |
+| The Belcher's        | 25,784              | +2.98%        |
+| Lei King Wan         | 15,093              | -0.23%        |
+| Larvotto             | 18,074              | -1.97%        |
+| The Avenue           | 24,364              | -1.04%        |
+| Island Resort        | 15,465              | +0.06%        |
+| The Merton           | 23,772              | +0.3%         |
+| Nan Fung Sun Chuen   | 13,441              | +6.85%        |
+| Chi Fu Fa Yuen       | 12,509              | +4.18%        |
+| Baguio Villa         | 15,016              | -0.91%        |
+| Aberdeen Centre      | 12,122              | -0.02%        |
+| The Leighton Hill    | 38,183              | +0.06%        |
+| City Garden          | 13,029              | +0.06%        |
+| Les Saisons          | 21,432              | +0.06%        |
+| Sham Wan Towers      | 17,088              | -0.2%         |
+| Illumination Terrace | 16,999              | -0.05%        |
+| Smithfield Terrace   | 16,844              | +0.3%         |
+| Queen's Terrace      | 20,765              | +0.15%        |
+| Pokfulam Gardens     | 10,931              | -0.09%        |
+| Academic Terrace     | 15,515              | +0.3%         |

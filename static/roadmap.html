@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FlowDraft · Capability Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e13; --bg2:#0d141c; --panel:#0f161f; --panel2:#121b26;
+    --edge:#1c2a38; --edge2:#27384a; --ink:#e7eef5; --muted:#8493a3; --faint:#566372;
+    --cyan:#39e0c8; --cyan-d:#1f8f80; --amber:#f5a524; --violet:#a78bfa; --pink:#f7768e; --green:#7fd17f;
+    --grid:#101b27; --shadow:0 24px 60px -28px rgba(0,0,0,.8);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"JetBrains Mono",ui-monospace,monospace;-webkit-font-smoothing:antialiased;line-height:1.5;
+    background-image:
+      radial-gradient(120% 70% at 85% -5%, rgba(57,224,200,.07), transparent 55%),
+      radial-gradient(90% 60% at 5% 105%, rgba(167,139,250,.06), transparent 55%);}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  a{color:inherit}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .disp{font-family:"Bricolage Grotesque"}
+
+  /* header */
+  header{padding:30px 0 14px}
+  .top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .mark{font-family:"Bricolage Grotesque";font-weight:800;font-size:23px;letter-spacing:-.02em}
+  .mark b{color:var(--cyan)}
+  .top .tag{font-size:11px;color:var(--muted);letter-spacing:.06em}
+  .topright{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .applink{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;border:1px solid var(--edge2);padding:6px 12px;border-radius:9px;transition:.18s}
+  .applink:hover{border-color:var(--cyan-d);color:var(--cyan)}
+  .applink svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+  .pills{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    padding:5px 9px;border-radius:20px;border:1px solid var(--edge2)}
+  .pill .dot{width:7px;height:7px;border-radius:50%}
+  .pill.live{color:var(--green);border-color:rgba(127,209,127,.3)} .pill.live .dot{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .pill.beta{color:var(--cyan);border-color:rgba(57,224,200,.3)} .pill.beta .dot{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+  .pill.road{color:var(--amber);border-color:rgba(245,165,36,.3)} .pill.road .dot{background:var(--amber);box-shadow:0 0 8px var(--amber)}
+
+  h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(30px,5vw,52px);line-height:1.04;letter-spacing:-.025em;margin:26px 0 12px;max-width:18ch}
+  h1 .hl{color:var(--cyan)}
+  .lede{color:var(--muted);font-size:14.5px;max-width:62ch;margin-bottom:8px}
+  .lede b{color:var(--ink)}
+
+  /* live pipeline strip */
+  .section-k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin:46px 0 16px;display:flex;align-items:center;gap:12px}
+  .section-k::after{content:"";flex:1;height:1px;background:var(--edge)}
+  .pipe{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;border:1px solid var(--edge);border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:var(--shadow)}
+  .step{flex:1 1 0;min-width:150px;padding:18px 18px;position:relative;border-right:1px solid var(--edge)}
+  .step:last-child{border-right:0}
+  .step .n{font-size:9px;color:var(--faint);letter-spacing:.16em}
+  .step .t{font-family:"Bricolage Grotesque";font-weight:700;font-size:16px;margin:6px 0 4px}
+  .step .d{font-size:11px;color:var(--muted)}
+  .step .ep{font-size:9.5px;color:var(--cyan-d);margin-top:9px;letter-spacing:.04em}
+  .step .arrow{position:absolute;right:-9px;top:50%;transform:translateY(-50%);z-index:2;width:18px;height:18px;
+    background:var(--panel);border:1px solid var(--edge);border-radius:50%;display:grid;place-items:center;color:var(--cyan)}
+  @media(max-width:760px){.step .arrow{display:none}}
+
+  /* cards grid */
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .card{grid-column:span 6;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--edge);border-radius:18px;
+    padding:20px 20px 22px;position:relative;overflow:hidden;transition:border-color .25s, transform .25s;box-shadow:var(--shadow)}
+  .card:hover{border-color:var(--edge2);transform:translateY(-2px)}
+  .card.wide{grid-column:span 12}
+  .card.third{grid-column:span 4}
+  @media(max-width:860px){.card,.card.third{grid-column:span 12}}
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;opacity:.7}
+  .card[data-accent="cyan"]::before{background:linear-gradient(90deg,var(--cyan),transparent)}
+  .card[data-accent="amber"]::before{background:linear-gradient(90deg,var(--amber),transparent)}
+  .card[data-accent="violet"]::before{background:linear-gradient(90deg,var(--violet),transparent)}
+  .card[data-accent="pink"]::before{background:linear-gradient(90deg,var(--pink),transparent)}
+  .card[data-accent="green"]::before{background:linear-gradient(90deg,var(--green),transparent)}
+  .chead{display:flex;align-items:flex-start;gap:12px;margin-bottom:6px}
+  .ctitle{font-family:"Bricolage Grotesque";font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .chead .pill{margin-left:auto;flex:0 0 auto}
+  .cdesc{font-size:12.5px;color:var(--muted);min-height:38px}
+  .cdesc b{color:var(--ink)}
+  .why{font-size:10.5px;color:var(--faint);margin-top:10px;padding-top:10px;border-top:1px dashed var(--edge);letter-spacing:.02em}
+  .why b{color:var(--cyan-d)}
+
+  /* mini SVG mock frame */
+  .mock{margin:14px 0 4px;border:1px solid var(--edge);border-radius:11px;background:#0a0f16;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:22px 22px;overflow:hidden}
+  .mock svg{display:block;width:100%;height:auto}
+
+  /* ROI calculator */
+  .roi{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:14px}
+  @media(max-width:760px){.roi{grid-template-columns:1fr}}
+  .ctl{margin-bottom:15px}
+  .ctl label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:7px}
+  .ctl label b{color:var(--ink);font-weight:700}
+  .ctl input[type=range]{width:100%;accent-color:var(--cyan);height:4px}
+  .seg{display:inline-flex;border:1px solid var(--edge2);border-radius:8px;overflow:hidden;margin-top:2px}
+  .seg button{background:transparent;border:0;color:var(--muted);font-family:inherit;font-size:10.5px;padding:6px 11px;cursor:pointer}
+  .seg button.on{background:rgba(57,224,200,.14);color:var(--cyan)}
+  .out{background:#0a0f16;border:1px solid var(--edge);border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .out .big{font-family:"Bricolage Grotesque";font-weight:800;font-size:46px;line-height:1;color:var(--cyan)}
+  .out .big.amber{color:var(--amber)}
+  .out .k{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .out .line{display:flex;justify-content:space-between;font-size:12px;color:var(--ink);padding:7px 0;border-bottom:1px dashed var(--edge)}
+  .out .line:last-child{border-bottom:0}
+  .out .line span:first-child{color:var(--muted)}
+  .verdict{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;padding:6px 11px;border-radius:8px;margin-top:4px;align-self:flex-start}
+  .verdict.good{background:rgba(127,209,127,.13);color:var(--green)}
+  .verdict.ok{background:rgba(245,165,36,.13);color:var(--amber)}
+  .assume{font-size:9.5px;color:var(--faint);margin-top:8px}
+
+  .cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;font-weight:700;color:var(--cyan);
+    border:1px solid var(--cyan-d);padding:9px 14px;border-radius:9px;text-decoration:none;transition:.18s}
+  .cta:hover{background:rgba(57,224,200,.1)}
+  .cta svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+
+  footer{margin:54px 0 40px;padding-top:20px;border-top:1px solid var(--edge);color:var(--faint);font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* entrance */
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.8,.25,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="top reveal" style="animation-delay:.02s">
+      <span class="mark">Flow<b>Draft</b></span>
+      <span class="tag">× ArchDraft · HK PropTech &amp; BEEO 2026</span>
+      <div class="topright">
+        <a class="applink" href="/">Open app <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="pills">
+          <span class="pill live"><span class="dot"></span>Live</span>
+          <span class="pill beta"><span class="dot"></span>Beta</span>
+          <span class="pill road"><span class="dot"></span>Roadmap</span>
+        </div>
+      </div>
+    </div>
+    <h1 class="reveal" style="animation-delay:.08s">One graph schema.<br><span class="hl">Five diagram types.</span> A whole building stack.</h1>
+    <p class="lede reveal" style="animation-delay:.14s">Every box below reads and writes the <b>same property-graph JSON</b>. The parse → rooms → valuation → compliance spine is <b>live today</b>; the rest is built on the identical contract, so each ships without re-plumbing.</p>
+  </header>
+
+  <!-- LIVE PIPELINE -->
+  <div class="section-k reveal" style="animation-delay:.18s">Live pipeline · working endpoints</div>
+  <div class="pipe reveal" style="animation-delay:.2s">
+    <div class="step"><div class="n">01 · INGEST</div><div class="t">Parse diagram</div><div class="d">Floor plan / P&amp;ID / DC → labeled graph via Claude vision.</div><div class="ep">POST /parse</div><div class="arrow">→</div></div>
+    <div class="step"><div class="n">02 · STRUCTURE</div><div class="t">Rooms &amp; areas</div><div class="d">Per-room m², categories, habitable split, room count.</div><div class="ep">graph.schema.json</div><div class="arrow">→</div></div>
+    <div class="step"><div class="n">03 · VALUE</div><div class="t">HK valuation</div><div class="d">Floor area → district price + rental ROI.</div><div class="ep">POST /finance/property</div><div class="arrow">→</div></div>
+    <div class="step"><div class="n">04 · VERIFY</div><div class="t">Compliance</div><div class="d">TIA-942 / BEC geometry &amp; rule checks.</div><div class="ep">POST /compliance/validate</div></div>
+  </div>
+
+  <!-- ROADMAP / MOCKUPS -->
+  <div class="section-k reveal">Capability map · beta &amp; roadmap</div>
+  <div class="grid">
+
+    <!-- 3D twin (beta, real) -->
+    <div class="card reveal" data-accent="cyan">
+      <div class="chead"><div class="ctitle">3D Building Twin</div><span class="pill beta"><span class="dot"></span>Beta</span></div>
+      <div class="cdesc">Room polygons extrude into an orbitable model — click any room for area, category &amp; habitability. Renders floor plans, P&amp;ID and datacenter graphs from one schema. <b>Working now.</b></div>
+      <div class="mock"><svg viewBox="0 0 380 150" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(190,84)" stroke-width="1.4" stroke-linejoin="round">
+          <!-- iso slabs -->
+          <g opacity=".95">
+            <path d="M-90 0 L-30 -34 L30 0 L-30 34 Z" fill="#5b8fc733" stroke="#5b8fc7"/>
+            <path d="M-90 0 L-90 -22 L-30 -56 L-30 -34 Z" fill="#5b8fc722" stroke="#5b8fc7"/>
+            <path d="M30 0 L30 -22 L-30 -56 L-30 -34 Z" fill="#5b8fc711" stroke="#5b8fc7"/>
+          </g>
+          <g opacity=".95" transform="translate(70,18)">
+            <path d="M-44 0 L-8 -20 L28 0 L-8 20 Z" fill="#e08a3c33" stroke="#e08a3c"/>
+            <path d="M-44 0 L-44 -16 L-8 -36 L-8 -20 Z" fill="#e08a3c22" stroke="#e08a3c"/>
+            <path d="M28 0 L28 -16 L-8 -36 L-8 -20 Z" fill="#e08a3c11" stroke="#e08a3c"/>
+          </g>
+          <g opacity=".9" transform="translate(-78,26)">
+            <path d="M-26 0 L-6 -12 L14 0 L-6 12 Z" fill="#3fb6a633" stroke="#3fb6a6"/>
+            <path d="M-26 0 L-26 -14 L-6 -26 L-6 -12 Z" fill="#3fb6a622" stroke="#3fb6a6"/>
+            <path d="M14 0 L14 -14 L-6 -26 L-6 -12 Z" fill="#3fb6a611" stroke="#3fb6a6"/>
+          </g>
+        </g>
+        <g font-family="JetBrains Mono" font-size="8" fill="#e7eef5">
+          <rect x="120" y="22" width="74" height="15" rx="4" fill="#080c11cc" stroke="#26384a"/><text x="126" y="32">CHAMBRE · <tspan fill="#39e0c8">11,2 m²</tspan></text>
+        </g>
+      </svg></div>
+      <div class="why"><b>Demo move:</b> turns the flat overlay into a walk-around twin — the "wow" beat your script lists as roadmap.</div>
+      <a class="cta" href="./twin.html">Open the live twin <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <!-- What-if ROI (interactive) -->
+    <div class="card reveal" data-accent="cyan" id="roi-card">
+      <div class="chead"><div class="ctitle">What-if Retrofit ROI</div><span class="pill beta"><span class="dot"></span>Live calc</span></div>
+      <div class="cdesc">Swap a chiller or upgrade glazing → annual saving, payback &amp; CO₂ update instantly. Deterministic math, not the LLM.</div>
+      <div class="roi">
+        <div>
+          <div class="ctl"><label>Plant electrical load <b><span id="o-load">350</span> kW</b></label><input id="r-load" type="range" min="50" max="900" step="10" value="350"></div>
+          <div class="ctl"><label>Efficiency gain <b><span id="o-eff">22</span>%</b></label><input id="r-eff" type="range" min="5" max="45" step="1" value="22"></div>
+          <div class="ctl"><label>Upgrade CapEx <b>HK$<span id="o-capex">1.4</span>M</b></label><input id="r-capex" type="range" min="0.3" max="6" step="0.1" value="1.4"></div>
+          <div class="ctl"><label>Run profile</label><div class="seg" id="r-hours">
+            <button data-h="3000">Office</button><button class="on" data-h="6000">Mixed</button><button data-h="8760">24/7</button></div></div>
+          <div class="assume">Assumes HK commercial tariff ≈ HK$1.35/kWh · grid factor 0.39 kg CO₂/kWh. Illustrative.</div>
+        </div>
+        <div class="out">
+          <div class="k">Annual saving</div><div class="big">HK$<span id="o-save">—</span></div>
+          <div class="line"><span>Payback</span><b><span id="o-pay">—</span> yrs</b></div>
+          <div class="line"><span>10-yr net</span><b>HK$<span id="o-net">—</span></b></div>
+          <div class="line"><span>CO₂ avoided / yr</span><b><span id="o-co2">—</span> t</b></div>
+          <div class="verdict good" id="o-verdict">— </div>
+        </div>
+      </div>
+      <div class="why"><b>Why it lands:</b> ties the parse to money on a legal deadline — the climax beat from the build plan.</div>
+    </div>
+
+    <!-- P&ID system graph -->
+    <div class="card reveal third" data-accent="violet">
+      <div class="chead"><div class="ctitle">P&amp;ID System Graph</div><span class="pill road"><span class="dot"></span>Roadmap</span></div>
+      <div class="cdesc">MEP topology in 3D — chillers, pumps, risers as glyphs &amp; colored tubes by medium.</div>
+      <div class="mock"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono" font-size="7">
+        <g stroke-width="2" fill="none">
+          <path d="M50 40 C 110 40, 110 96, 170 96" stroke="#4fd0e0"/>
+          <path d="M170 60 C 220 60, 220 30, 258 30" stroke="#79c0ff"/>
+          <path d="M50 40 C 90 40, 90 116, 130 116" stroke="#f7768e"/>
+        </g>
+        <g>
+          <rect x="34" y="28" width="32" height="24" rx="3" fill="#4fd0e022" stroke="#4fd0e0"/><text x="38" y="63" fill="#9fb">CH-1</text>
+          <circle cx="170" cy="96" r="13" fill="#f5a52422" stroke="#f5a524"/><text x="158" y="120" fill="#f5a524">P-2</text>
+          <rect x="156" y="48" width="28" height="22" rx="3" fill="#79c0ff22" stroke="#79c0ff"/><text x="158" y="44" fill="#79c0ff">AHU</text>
+          <rect x="244" y="20" width="28" height="20" rx="3" fill="#79c0ff22" stroke="#79c0ff"/>
+          <path d="M122 108 l8 8 8-8 -8 -8 z" fill="#f7768e22" stroke="#f7768e"/>
+        </g>
+      </svg></div>
+      <div class="why"><b>Same viewer</b> — already renders <b>nodes/edges</b> when the graph has them.</div>
+    </div>
+
+    <!-- Fault capture -->
+    <div class="card reveal third" data-accent="amber">
+      <div class="chead"><div class="ctitle">On-site Fault Capture</div><span class="pill road"><span class="dot"></span>Roadmap</span></div>
+      <div class="cdesc">Snap a nameplate → Claude reads tag/model/serial → pins the fault to its node.</div>
+      <div class="mock"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono" font-size="7">
+        <rect x="28" y="26" width="66" height="100" rx="9" fill="#0c1218" stroke="#27384a"/>
+        <rect x="36" y="40" width="50" height="58" rx="4" fill="#101a22" stroke="#26384a"/>
+        <text x="42" y="58" fill="#8493a3">CHILLER</text><text x="42" y="70" fill="#e7eef5">CH-1</text><text x="42" y="82" fill="#8493a3">COP 5.2</text>
+        <circle cx="61" cy="114" r="5" fill="none" stroke="#8493a3"/>
+        <path d="M104 76 h54" stroke="#f5a524" stroke-dasharray="3 3"/><path d="M156 70 l8 6 -8 6" fill="#f5a524"/>
+        <rect x="168" y="50" width="110" height="52" rx="8" fill="#f5a52411" stroke="#f5a524"/>
+        <text x="178" y="68" fill="#f5a524">⚠ MATCHED → CH-1</text><text x="178" y="82" fill="#e7eef5">model TRN-RTAC-140</text><text x="178" y="94" fill="#8493a3">fault: high ΔT</text>
+      </svg></div>
+      <div class="why">Closes the loop from <b>drawing</b> to <b>field</b> audit.</div>
+    </div>
+
+    <!-- IoT / DR -->
+    <div class="card reveal third" data-accent="green">
+      <div class="chead"><div class="ctitle">IoT · Demand-Response</div><span class="pill road"><span class="dot"></span>Roadmap</span></div>
+      <div class="cdesc">Live meter feed on the twin; shed load on a DR / VPP event, log the kWh.</div>
+      <div class="mock"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono" font-size="7">
+        <polyline points="20,110 50,92 80,98 110,70 140,80 150,48 170,46 200,84 230,70 260,76 285,62" fill="none" stroke="#7fd17f" stroke-width="2"/>
+        <line x1="150" y1="20" x2="150" y2="130" stroke="#f5a524" stroke-dasharray="3 3"/>
+        <text x="153" y="30" fill="#f5a524">DR event</text>
+        <rect x="160" y="42" width="58" height="44" fill="#7fd17f10"/>
+        <text x="20" y="128" fill="#8493a3">kW</text><text x="244" y="128" fill="#7fd17f">−18% peak</text>
+      </svg></div>
+      <div class="why">Add-on revenue tier in the pitch.</div>
+    </div>
+
+    <!-- Collaboration -->
+    <div class="card reveal" data-accent="pink">
+      <div class="chead"><div class="ctitle">Live Collaboration</div><span class="pill road"><span class="dot"></span>Roadmap</span></div>
+      <div class="cdesc">Threaded comments pinned to any node or room; engineer + auditor + owner in one model, with an audit trail for the BEEO submission.</div>
+      <div class="mock"><svg viewBox="0 0 600 132" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono" font-size="8">
+        <circle cx="120" cy="66" r="9" fill="#f7768e22" stroke="#f7768e"/><text x="108" y="92" fill="#f7768e">CH-1</text>
+        <path d="M129 60 h60" stroke="#27384a"/>
+        <rect x="190" y="26" width="190" height="34" rx="8" fill="#101a22" stroke="#27384a"/>
+        <circle cx="206" cy="43" r="7" fill="#5b8fc7"/><text x="220" y="40" fill="#e7eef5">A. Wong · engineer</text><text x="220" y="52" fill="#8493a3">COP below BEC 5.2 — flag?</text>
+        <rect x="210" y="70" width="200" height="34" rx="8" fill="#0e161d" stroke="#1c2a38"/>
+        <circle cx="226" cy="87" r="7" fill="#7fd17f"/><text x="240" y="84" fill="#e7eef5">L. Chan · auditor</text><text x="240" y="96" fill="#8493a3">confirmed, add to report §3</text>
+        <rect x="430" y="46" width="150" height="40" rx="8" fill="#39e0c810" stroke="#1f8f80"/><text x="444" y="64" fill="#39e0c8">audit trail</text><text x="444" y="77" fill="#8493a3">3 edits · signed</text>
+      </svg></div>
+      <div class="why"><b>Persistence:</b> SQLite/Supabase comment store keyed by node id.</div>
+    </div>
+
+    <!-- CSDI building context -->
+    <div class="card reveal" data-accent="cyan">
+      <div class="chead"><div class="ctitle">HK Building Context · CSDI</div><span class="pill road"><span class="dot"></span>Roadmap</span></div>
+      <div class="cdesc">Resolve a building name → age, GFA, storeys + drop the parsed system inside the real <b>glTF shell</b>. Anchors the twin to a genuine Hong Kong address for the audit story.</div>
+      <div class="mock"><svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono" font-size="8">
+        <g transform="translate(150,86)" stroke="#39e0c8" stroke-width="1.3" fill="none" opacity=".55">
+          <path d="M-70 0 L0 -40 L70 0 L0 40 Z"/><path d="M-70 0 L-70 -46 L0 -86 L0 -40 Z"/><path d="M70 0 L70 -46 L0 -86 L0 -40 Z"/>
+        </g>
+        <g transform="translate(150,86)" stroke-width="1.3" stroke-linejoin="round">
+          <path d="M-30 8 L0 -10 L30 8 L0 26 Z" fill="#5b8fc733" stroke="#5b8fc7"/>
+          <path d="M30 8 L48 -2 L60 6 L42 16 Z" fill="#e08a3c33" stroke="#e08a3c"/>
+        </g>
+        <rect x="350" y="34" width="220" height="84" rx="9" fill="#0a0f16" stroke="#27384a"/>
+        <text x="366" y="54" fill="#8493a3">CYBERPORT 3</text>
+        <text x="366" y="72" fill="#e7eef5">OP date · 2004</text><text x="366" y="86" fill="#e7eef5">GFA · 28,400 m²</text><text x="366" y="100" fill="#e7eef5">storeys · 9</text>
+        <text x="500" y="72" fill="#39e0c8">glTF ✓</text>
+      </svg></div>
+      <div class="why"><b>Route B:</b> ArcGIS query → <b>Format_glTF</b> → GLTFLoader (no API key).</div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>FlowDraft × ArchDraft · EuroTech × HKTE Hackathon · Munich 2026</span>
+    <span class="mono">contract: schemas/graph.schema.json</span>
+  </footer>
+</div>
+
+<script>
+"use strict";
+(function(){
+  const TARIFF=1.35, CO2=0.39;
+  let hours=6000;
+  const $=id=>document.getElementById(id);
+  const money=v=>{ v=Math.round(v); if(Math.abs(v)>=1e6) return (v/1e6).toFixed(2)+'M'; if(Math.abs(v)>=1e3) return (v/1e3).toFixed(0)+'k'; return ''+v; };
+  function calc(){
+    const load=+$('r-load').value, eff=+$('r-eff').value/100, capex=+$('r-capex').value*1e6;
+    $('o-load').textContent=load; $('o-eff').textContent=Math.round(eff*100); $('o-capex').textContent=(+$('r-capex').value).toFixed(1);
+    const kwh = load*hours*eff;                  // kWh saved / yr
+    const save = kwh*TARIFF;                      // HK$ / yr
+    const pay = save>0? capex/save : 99;
+    const net = save*10 - capex;
+    const co2 = kwh*CO2/1000;                     // tonnes
+    $('o-save').textContent=money(save);
+    $('o-pay').textContent=pay.toFixed(1);
+    $('o-net').textContent=money(net);
+    $('o-co2').textContent=co2.toFixed(0);
+    const v=$('o-verdict');
+    if(pay<=3){ v.className='verdict good'; v.textContent='✓ Strong — under 3-yr payback'; }
+    else if(pay<=6){ v.className='verdict ok'; v.textContent='~ Viable — '+pay.toFixed(1)+'-yr payback'; }
+    else { v.className='verdict ok'; v.textContent='△ Long — '+pay.toFixed(1)+'-yr payback'; }
+  }
+  ['r-load','r-eff','r-capex'].forEach(id=>$(id).addEventListener('input',calc));
+  $('r-hours').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b)return;
+    [...e.currentTarget.children].forEach(x=>x.classList.remove('on')); b.classList.add('on'); hours=+b.dataset.h; calc(); });
+  calc();
+
+  // stagger reveal
+  document.querySelectorAll('.grid .card').forEach((c,i)=>c.style.animationDelay=(0.04*i+0.05)+'s');
+})();
+</script>
+</body>
+</html>

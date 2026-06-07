@@ -1,0 +1,27 @@
+| Estate               | Rent (HK$/ft²/month) | Notes            |
+| -------------------- | -------------------- | ---------------- |
+| Taikoo Shing         | 45.0                 | mature estate    |
+| South Horizons       | 40.5                 | coastal          |
+| Residence Bel-Air    | 62.0                 | luxury           |
+| Kornhill             | 41.0                 | mid-high         |
+| Heng Fa Chuen        | 38.0                 | mid              |
+| Grand Promenade      | 52.0                 | high-rise        |
+| The Belcher's        | 60.0                 | premium          |
+| Lei King Wan         | 42.0                 | mid              |
+| Larvotto             | 58.0                 | luxury           |
+| The Avenue           | 55.0                 | Wan Chai premium |
+| Island Resort        | 40.0                 | eastern          |
+| The Merton           | 57.0                 | mid-high         |
+| Nan Fung Sun Chuen   | 35.0                 | older estate     |
+| Chi Fu Fa Yuen       | 33.0                 | value            |
+| Baguio Villa         | 44.0                 | low-density      |
+| Aberdeen Centre      | 34.0                 | affordable       |
+| The Leighton Hill    | 70.0                 | ultra luxury     |
+| City Garden          | 36.0                 | North Point      |
+| Les Saisons          | 50.0                 | premium          |
+| Sham Wan Towers      | 45.0                 | Ap Lei Chau      |
+| Illumination Terrace | 44.0                 | Sai Ying Pun     |
+| Smithfield Terrace   | 43.0                 | Kennedy Town     |
+| Queen's Terrace      | 52.0                 | mid-high         |
+| Pokfulam Gardens     | 30.0                 | budget           |
+| Academic Terrace     | 41.0                 | mid              |

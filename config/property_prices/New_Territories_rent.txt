@@ -1,0 +1,75 @@
+| Estate                        | Rent (HK$/ft²/month) | Notes         |
+| ----------------------------- | -------------------- | ------------- |
+| Kingswood Villas              | 28.0                 | low           |
+| Park Vista (Park Yoho)        | 38.0                 | mid           |
+| Double Cove                   | 44.0                 | mid-high      |
+| The Reach                     | 35.0                 | mid           |
+| City One Shatin               | 42.0                 | large estate  |
+| Park Signature                | 32.0                 | mid           |
+| Park Island                   | 30.0                 | island estate |
+| Yoho Town Phase 1             | 40.0                 | mid-high      |
+| Yuccie Square                 | 41.0                 | mid           |
+| Yoho Midtown                  | 40.0                 | mid           |
+| Festival City                 | 50.0                 | high          |
+| The Spectra                   | 39.0                 | mid           |
+| Caribbean Coast               | 31.0                 | low-mid       |
+| Ocean Pride                   | 52.0                 | high          |
+| Sunshine City                 | 40.0                 | mid           |
+| Century Gateway               | 41.0                 | mid           |
+| The Regent                    | 37.0                 | mid           |
+| Central Park Towers           | 30.0                 | low           |
+| Belvedere Garden              | 32.0                 | low-mid       |
+| Tai Hing Gardens              | 27.0                 | low           |
+| Providence Bay                | 36.0                 | mid           |
+| Tsuen Wan Centre              | 29.0                 | low           |
+| Century Link                  | 34.0                 | mid           |
+| The Pavilia Bay               | 55.0                 | high          |
+| Lake Silver                   | 46.0                 | mid-high      |
+| Rambler Crest                 | 33.0                 | low-mid       |
+| Tai Po Centre                 | 34.0                 | mid           |
+| Villa Esplanada               | 40.0                 | mid           |
+| Hongkong Garden               | 26.0                 | low           |
+| The Parcville                 | 35.0                 | mid           |
+| The Met. Blossom              | 37.0                 | mid           |
+| Discovery Park                | 38.0                 | mid           |
+| Sea Crest Villa               | 28.0                 | low           |
+| Tierra Verde                  | 50.0                 | high          |
+| Bellagio                      | 36.0                 | mid           |
+| Parkland Villas               | 34.0                 | mid           |
+| Dawning Views                 | 33.0                 | mid           |
+| Vista Paradiso                | 35.0                 | mid           |
+| Chelsea Court                 | 45.0                 | mid-high      |
+| Coastal Skyline               | 32.0                 | low-mid       |
+| Royal Ascot                   | 41.0                 | mid-high      |
+| Greenfield Garden             | 34.0                 | mid           |
+| The Sherwood                  | 28.0                 | low           |
+| Serenity Park                 | 33.0                 | low-mid       |
+| Tuen Mun Town Plaza           | 31.0                 | low-mid       |
+| The Palazzo                   | 50.0                 | high          |
+| Tsuen King Garden             | 28.0                 | low           |
+| Luk Yeung Sun Chuen           | 35.0                 | mid           |
+| Mont Vert                     | 30.0                 | low           |
+| Tung Chung Crescent           | 32.0                 | low-mid       |
+| Le Pont                       | 27.0                 | low           |
+| Sun Tuen Mun Centre           | 26.0                 | low           |
+| Classical Gardens             | 31.0                 | low-mid       |
+| Pictorial Garden              | 33.0                 | mid           |
+| Noble Hill                    | 34.0                 | mid           |
+| Monte Vista                   | 33.0                 | mid           |
+| Riviera Gardens               | 32.0                 | low-mid       |
+| Flora Plaza                   | 33.0                 | mid           |
+| The Bloomsway                 | 31.0                 | low-mid       |
+| Golden Lion Garden            | 35.0                 | mid           |
+| Royal Green                   | 32.0                 | low-mid       |
+| Hong Kong Gold Coast          | 24.0                 | low           |
+| New Kwai Fong Gardens         | 36.0                 | mid           |
+| Shatin Centre                 | 42.0                 | mid-high      |
+| Jubilee Garden                | 34.0                 | mid           |
+| Aegean Coast                  | 30.0                 | low           |
+| Avon Park                     | 31.0                 | low-mid       |
+| Mayfair By The Sea            | 44.0                 | high          |
+| Sheung Shui Centre            | 35.0                 | mid           |
+| Miami Beach Towers            | 29.0                 | low           |
+| Shatin New Town (Lucky Plaza) | 40.0                 | mid-high      |
+| Garden Rivera                 | 41.0                 | mid-high      |
+| Fanling Centre                | 33.0                 | mid           |

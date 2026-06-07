@@ -1,0 +1,36 @@
+{
+  "checks_run": 8,
+  "passed": false,
+  "violations": [
+    {
+      "geometry_id": "aisle-01",
+      "message": "width=1.0 violates required width >= 1.2m.",
+      "rule": {
+        "condition": "min_width",
+        "target_class": "Aisle",
+        "target_type": "cold",
+        "description": "Cold aisles shall be at least 1.2 m wide to permit front-of-rack access and\nairflow."
+      }
+    },
+    {
+      "geometry_id": null,
+      "message": "no ups Equipment found in the plan.",
+      "rule": {
+        "condition": "must_exist",
+        "target_class": "Equipment",
+        "target_type": "ups",
+        "description": "At least one UPS must exist to provide ride-through power."
+      }
+    },
+    {
+      "geometry_id": "sample_dc_01",
+      "message": "pue=1.7 violates required pue <= 1.5.",
+      "rule": {
+        "condition": "max_pue",
+        "target_class": "Building",
+        "target_type": "Building",
+        "description": "The facility Power Usage Effectiveness (PUE) shall not exceed 1.5."
+      }
+    }
+  ]
+}

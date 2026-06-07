@@ -1,99 +1,55 @@
-name: construction-analyzer
-
-networks:
-  default:
-    name: construction-analyzer-net
-
-volumes:
-  postgres-data:
-  ollama-data:
-  backend-state:
-
 services:
-  postgres:
-    image: pgvector/pgvector:pg16
-    environment:
-      POSTGRES_USER: construction
-      POSTGRES_PASSWORD: construction
-      POSTGRES_DB: memory_palace
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+  app:
+    build: .
+    image: flowdraft:latest
+    container_name: flowdraft
     ports:
-      - "${POSTGRES_HOST_PORT:-5433}:5432"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U construction -d memory_palace"]
-      interval: 5s
-      timeout: 5s
-      retries: 12
-      start_period: 10s
+      - "8000:8000"
+    # API keys: prefer env vars from your local .env (see .env.example). Optional —
+    # if absent, keys are read from the mounted models/secretapi.txt + roboflow_key.txt.
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Compliance checker has no Postgres here → it auto-falls back to file SQLite.
+      # Uncomment + enable the `postgres` profile below to use Postgres instead.
+      # DATABASE_URL: postgresql+psycopg2://dc_user:dc_password@postgres:5432/dc_compliance
+      ROBOFLOW_FIXTURE_MODEL: ${ROBOFLOW_FIXTURE_MODEL:-floor-plans-500-r7jy4/1}
+    volumes:
+      # Mount your local key files (gitignored) read-only so the app can read
+      # models/secretapi.txt + models/roboflow_key.txt without baking them in.
+      - ./models:/app/models:ro
+      # Persist parsed graphs / overlays produced at runtime.
+      - ./data:/app/data
+    restart: unless-stopped
 
+  # ── Optional: PostgreSQL for the compliance checker ──
+  # Enable with:  docker compose --profile postgres up --build
+  # and set DATABASE_URL on the app service (see environment block above).
+  postgres:
+    image: postgres:16-alpine
+    container_name: flowdraft-postgres
+    profiles: ["postgres"]
+    environment:
+      POSTGRES_USER: dc_user
+      POSTGRES_PASSWORD: dc_password
+      POSTGRES_DB: dc_compliance
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # ── Optional: Ollama for local embeddings (rule de-duplication) ──
+  # Enable with:  docker compose --profile ollama up --build
   ollama:
     image: ollama/ollama:latest
+    container_name: flowdraft-ollama
+    profiles: ["ollama"]
+    ports:
+      - "11434:11434"
     volumes:
-      - ollama-data:/root/.ollama
-    ports:
-      - "${OLLAMA_HOST_PORT:-11434}:11434"
-    healthcheck:
-      test:
-        - CMD-SHELL
-        - "ollama list >/dev/null 2>&1 || curl -fsS http://localhost:11434/api/tags >/dev/null"
-      interval: 10s
-      timeout: 5s
-      retries: 12
-      start_period: 15s
+      - ollama:/root/.ollama
+    restart: unless-stopped
 
-  backend:
-    build:
-      context: ./backend
-    environment:
-      LLM_PROVIDER: ${LLM_PROVIDER:-openai}
-      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
-      OLLAMA_HOST: http://ollama:11434
-      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3:1.7b}
-      MEMORY_PALACE_DATABASE_URL: postgresql://construction:construction@postgres:5432/memory_palace
-      MEMORY_PALACE_EMBEDDING_MODEL: ${MEMORY_PALACE_EMBEDDING_MODEL:-nomic-embed-text}
-      MEMORY_PALACE_LLM_MODEL: ${MEMORY_PALACE_LLM_MODEL:-qwen3:1.7b}
-      MEMORY_PALACE_INSTANCE_ID: construction-analyzer
-      CHECKPOINT_DB_PATH: /app/data/checkpoints.sqlite
-      DOCUMENTS_DIR: /app/data/documents
-      ENGINEERING_CONVERTER_COMMAND_TEMPLATE: ${ENGINEERING_CONVERTER_COMMAND_TEMPLATE:-}
-      ENGINEERING_CONVERTER_TIMEOUT_SECONDS: ${ENGINEERING_CONVERTER_TIMEOUT_SECONDS:-30}
-      ENGINEERING_CONVERTER_OUTPUT_DIR: ${ENGINEERING_CONVERTER_OUTPUT_DIR:-/app/data/conversions}
-      ENGINEERING_CONVERTER_OUTPUT_EXTENSION: ${ENGINEERING_CONVERTER_OUTPUT_EXTENSION:-.pdf}
-      ENGINEERING_CONVERTER_SMOKE_INPUT_PATH: ${ENGINEERING_CONVERTER_SMOKE_INPUT_PATH:-}
-      KB_BACKEND: ${KB_BACKEND:-memorypalace}
-    volumes:
-      - ./backend/data/documents:/app/data/documents
-      - backend-state:/app/data
-    depends_on:
-      postgres:
-        condition: service_healthy
-      ollama:
-        condition: service_healthy
-    ports:
-      - "${BACKEND_HOST_PORT:-8000}:8000"
-    healthcheck:
-      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/health || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 12
-      start_period: 30s
-
-  frontend:
-    build:
-      context: ./frontend
-    environment:
-      NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL:-http://localhost:8000}
-      NODE_ENV: production
-    depends_on:
-      backend:
-        condition: service_healthy
-    ports:
-      - "${FRONTEND_HOST_PORT:-3000}:3000"
-    healthcheck:
-      test: ["CMD-SHELL", "curl -fsS http://localhost:3000/api/health || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 12
-      start_period: 15s
+volumes:
+  pgdata:
+  ollama:

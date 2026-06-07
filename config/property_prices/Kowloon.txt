@@ -1,0 +1,47 @@
+| Estate              | Price (HK$/ft² SFA) | Weekly Change |
+| ------------------- | ------------------- | ------------- |
+| Mei Foo Sun Chuen   | 11,128              | +0.98%        |
+| Cullinan West       | 23,612              | -0.55%        |
+| Lohas Park LP6      | 15,342              | +2.42%        |
+| The Wings           | 18,823              | +1.56%        |
+| Metro City          | 15,361              | +3.79%        |
+| Ocean Shores        | 16,301              | +1.05%        |
+| Park Central        | 16,152              | -0.35%        |
+| Laguna City         | 11,699              | -3.19%        |
+| The Beaumont        | 11,788              | +6.05%        |
+| Whampoa Garden      | 13,846              | +0.16%        |
+| Metro Town          | 15,609              | -0.46%        |
+| Sorrento            | 26,779              | -1.87%        |
+| Metro Harbour View  | 16,802              | -0.64%        |
+| Lohas Park Hemera   | 13,255              | +0.42%        |
+| Grand Central       | 18,655              | +1.8%         |
+| Tseung Kwan O Plaza | 17,227              | +7.47%        |
+| Laguna Verde        | 16,984              | +0.16%        |
+| Banyan Garden       | 16,967              | -1.13%        |
+| Telford Gardens     | 11,389              | +6.25%        |
+| La Cite Noble       | 14,249              | -4.01%        |
+| Residence Oasis     | 15,979              | -0.52%        |
+| The Long Beach      | 20,150              | -0.1%         |
+| Harbour Place       | 16,721              | -4.54%        |
+| Parc Oasis          | 18,218              | +2.01%        |
+| Aquamarine          | 18,204              | +3.49%        |
+| Royal Peninsula     | 16,042              | -0.45%        |
+| Liberte             | 16,433              | +0.15%        |
+| Amoy Gardens        | 13,274              | +1.94%        |
+| Island Harbourview  | 19,561              | -4.65%        |
+| Sky Tower           | 17,848              | +0.16%        |
+| The Pacifica        | 17,735              | +4.33%        |
+| Harbour Green       | 20,035              | +2.52%        |
+| Vibe Centro         | 19,940              | +3.35%        |
+| Celestial Heights   | 19,853              | +0.16%        |
+| Sceneway Garden     | 12,014              | -5.74%        |
+| Grand Waterfront    | 16,439              | +0.16%        |
+| Galaxia             | 15,935              | +0.01%        |
+| Park Avenue         | 22,727              | +3.01%        |
+| Victoria Skye       | 20,672              | +3.13%        |
+| The Victoria Towers | 21,436              | +2.12%        |
+| Hampton Place       | 17,862              | -0.11%        |
+| Tak Bo Garden       | 13,155              | +0.33%        |
+| Manhattan Hill      | 20,896              | +0.1%         |
+| The Latitude        | 17,539              | +0.01%        |
+| One Kai Tak         | 20,641              | +0.33%        |

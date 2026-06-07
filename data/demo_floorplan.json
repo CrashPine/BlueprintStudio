@@ -1,0 +1,1491 @@
+{
+  "meta": {
+    "diagram_id": "fp-hybrid-F2_original",
+    "diagram_type": "FLOORPLAN",
+    "source_file": "F2_original.png",
+    "image_width": 1797,
+    "image_height": 1267,
+    "parse_confidence": 0.82,
+    "parser": "roboflow+claude",
+    "topology": "set_of_marks",
+    "warnings": [
+      "overlap_resolved: clipped room space-11 (KH) to remove overlap",
+      "overlap_resolved: clipped room space-8 (VH) to remove overlap",
+      "overlap_resolved: clipped room space-1 (STD) to remove overlap",
+      "overlap_resolved: clipped room space-5 (S.MITT.) to remove overlap",
+      "uncalibrated: no scale_m_per_px found; fixture width_m/height_m omitted (provide a known dimension to enable 3D sizing)"
+    ],
+    "level": "Ground Floor",
+    "unit_system": "metric",
+    "room_count": 20,
+    "scale_source": "none"
+  },
+  "spaces": [
+    {
+      "id": "space-1",
+      "name": "STD",
+      "category": "unknown",
+      "polygon_2d": [
+        [
+          0.03617,
+          0.00584
+        ],
+        [
+          0.03617,
+          0.05407
+        ],
+        [
+          0.14135,
+          0.05407
+        ],
+        [
+          0.14135,
+          0.00584
+        ]
+      ],
+      "bbox_2d": [
+        0.08876,
+        0.02995,
+        0.10518,
+        0.04823
+      ],
+      "confidence": 0.6,
+      "habitable": false,
+      "centroid_2d": [
+        0.08876,
+        0.02995
+      ],
+      "area_m2": 1.15,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-2",
+      "name": "MH",
+      "category": "bedroom",
+      "polygon_2d": [
+        [
+          0.79466,
+          0.00584
+        ],
+        [
+          0.8401,
+          0.00584
+        ],
+        [
+          0.8401,
+          0.05407
+        ],
+        [
+          0.79466,
+          0.05407
+        ]
+      ],
+      "bbox_2d": [
+        0.81738,
+        0.02995,
+        0.04544,
+        0.04823
+      ],
+      "confidence": 0.72,
+      "habitable": true,
+      "centroid_2d": [
+        0.81738,
+        0.02995
+      ],
+      "area_m2": 0.5,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-3",
+      "name": "unknown",
+      "category": "unknown",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.00584
+        ],
+        [
+          0.99582,
+          0.00584
+        ],
+        [
+          0.99582,
+          0.10615
+        ],
+        [
+          0.95058,
+          0.10615
+        ]
+      ],
+      "bbox_2d": [
+        0.9732,
+        0.05599,
+        0.04524,
+        0.10031
+      ],
+      "confidence": 0.45,
+      "habitable": false,
+      "centroid_2d": [
+        0.9732,
+        0.05599
+      ],
+      "area_m2": 1.03,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-4",
+      "name": "unknown",
+      "category": "unknown",
+      "polygon_2d": [
+        [
+          0.56891,
+          0.00584
+        ],
+        [
+          0.64329,
+          0.00584
+        ],
+        [
+          0.64329,
+          0.16555
+        ],
+        [
+          0.56891,
+          0.16555
+        ]
+      ],
+      "bbox_2d": [
+        0.6061,
+        0.0857,
+        0.07438,
+        0.15971
+      ],
+      "confidence": 0.5,
+      "habitable": false,
+      "centroid_2d": [
+        0.6061,
+        0.0857
+      ],
+      "area_m2": 2.7,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-5",
+      "name": "S.MITT.",
+      "category": "elevator",
+      "polygon_2d": [
+        [
+          0.56891,
+          0.16555
+        ],
+        [
+          0.56891,
+          0.00584
+        ],
+        [
+          0.53089,
+          0.00584
+        ],
+        [
+          0.53089,
+          0.16555
+        ]
+      ],
+      "bbox_2d": [
+        0.5499,
+        0.0857,
+        0.03802,
+        0.15971
+      ],
+      "confidence": 0.6,
+      "habitable": false,
+      "centroid_2d": [
+        0.5499,
+        0.0857
+      ],
+      "area_m2": 1.38,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-6",
+      "name": "staircase",
+      "category": "stairwell",
+      "polygon_2d": [
+        [
+          0.39232,
+          0.00584
+        ],
+        [
+          0.53089,
+          0.00584
+        ],
+        [
+          0.53089,
+          0.16555
+        ],
+        [
+          0.39232,
+          0.16555
+        ]
+      ],
+      "bbox_2d": [
+        0.4616,
+        0.0857,
+        0.13857,
+        0.15971
+      ],
+      "confidence": 0.75,
+      "habitable": false,
+      "centroid_2d": [
+        0.4616,
+        0.0857
+      ],
+      "area_m2": 5.04,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-7",
+      "name": "KH",
+      "category": "bathroom",
+      "polygon_2d": [
+        [
+          0.8401,
+          0.00584
+        ],
+        [
+          0.95058,
+          0.00584
+        ],
+        [
+          0.95058,
+          0.16555
+        ],
+        [
+          0.8401,
+          0.16555
+        ]
+      ],
+      "bbox_2d": [
+        0.89534,
+        0.0857,
+        0.11048,
+        0.15971
+      ],
+      "confidence": 0.65,
+      "habitable": false,
+      "centroid_2d": [
+        0.89534,
+        0.0857
+      ],
+      "area_m2": 4.02,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-8",
+      "name": "VH",
+      "category": "hallway",
+      "polygon_2d": [
+        [
+          0.14135,
+          0.00584
+        ],
+        [
+          0.14135,
+          0.16555
+        ],
+        [
+          0.39232,
+          0.16555
+        ],
+        [
+          0.39232,
+          0.00584
+        ]
+      ],
+      "bbox_2d": [
+        0.26683,
+        0.0857,
+        0.25097,
+        0.15971
+      ],
+      "confidence": 0.65,
+      "habitable": false,
+      "centroid_2d": [
+        0.26683,
+        0.0857
+      ],
+      "area_m2": 9.13,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-9",
+      "name": "unknown",
+      "category": "unknown",
+      "polygon_2d": [
+        [
+          0.53089,
+          0.08287
+        ],
+        [
+          0.56891,
+          0.08287
+        ],
+        [
+          0.56891,
+          0.16555
+        ],
+        [
+          0.53089,
+          0.16555
+        ]
+      ],
+      "bbox_2d": [
+        0.5499,
+        0.12421,
+        0.03802,
+        0.08268
+      ],
+      "confidence": 0.4,
+      "habitable": false,
+      "centroid_2d": [
+        0.5499,
+        0.12421
+      ],
+      "area_m2": 0.72,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-10",
+      "name": "KH",
+      "category": "bathroom",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.10615
+        ],
+        [
+          0.99582,
+          0.10615
+        ],
+        [
+          0.99582,
+          0.28216
+        ],
+        [
+          0.95058,
+          0.28216
+        ]
+      ],
+      "bbox_2d": [
+        0.9732,
+        0.19416,
+        0.04524,
+        0.17601
+      ],
+      "confidence": 0.65,
+      "habitable": false,
+      "centroid_2d": [
+        0.9732,
+        0.19416
+      ],
+      "area_m2": 1.81,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-11",
+      "name": "KH",
+      "category": "kitchen",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.18706
+        ],
+        [
+          0.86366,
+          0.18706
+        ],
+        [
+          0.86366,
+          0.34649
+        ],
+        [
+          0.90958,
+          0.34649
+        ],
+        [
+          0.90958,
+          0.422
+        ],
+        [
+          0.95058,
+          0.422
+        ]
+      ],
+      "bbox_2d": [
+        0.90712,
+        0.30453,
+        0.08692,
+        0.23494
+      ],
+      "confidence": 0.7,
+      "habitable": true,
+      "centroid_2d": [
+        0.90712,
+        0.30453
+      ],
+      "area_m2": 3.86,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-12",
+      "name": "VH",
+      "category": "corridor",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.28216
+        ],
+        [
+          0.99582,
+          0.28216
+        ],
+        [
+          0.99582,
+          0.422
+        ],
+        [
+          0.95058,
+          0.422
+        ]
+      ],
+      "bbox_2d": [
+        0.9732,
+        0.35208,
+        0.04524,
+        0.13984
+      ],
+      "confidence": 0.6,
+      "habitable": false,
+      "centroid_2d": [
+        0.9732,
+        0.35208
+      ],
+      "area_m2": 1.44,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-13",
+      "name": "WC",
+      "category": "toilet",
+      "polygon_2d": [
+        [
+          0.86366,
+          0.34649
+        ],
+        [
+          0.90958,
+          0.34649
+        ],
+        [
+          0.90958,
+          0.422
+        ],
+        [
+          0.86366,
+          0.422
+        ]
+      ],
+      "bbox_2d": [
+        0.88662,
+        0.38425,
+        0.04592,
+        0.07551
+      ],
+      "confidence": 0.75,
+      "habitable": false,
+      "centroid_2d": [
+        0.88662,
+        0.38425
+      ],
+      "area_m2": 0.79,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-14",
+      "name": "staircase",
+      "category": "stairwell",
+      "polygon_2d": [
+        [
+          0.8401,
+          0.422
+        ],
+        [
+          0.95058,
+          0.422
+        ],
+        [
+          0.95058,
+          0.59313
+        ],
+        [
+          0.8401,
+          0.59313
+        ]
+      ],
+      "bbox_2d": [
+        0.89534,
+        0.50757,
+        0.11048,
+        0.17113
+      ],
+      "confidence": 0.75,
+      "habitable": false,
+      "centroid_2d": [
+        0.89534,
+        0.50757
+      ],
+      "area_m2": 4.3,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-15",
+      "name": "staircase",
+      "category": "stairwell",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.49724
+        ],
+        [
+          0.99582,
+          0.49724
+        ],
+        [
+          0.99582,
+          0.65785
+        ],
+        [
+          0.95058,
+          0.65785
+        ]
+      ],
+      "bbox_2d": [
+        0.9732,
+        0.57754,
+        0.04524,
+        0.16061
+      ],
+      "confidence": 0.7,
+      "habitable": false,
+      "centroid_2d": [
+        0.9732,
+        0.57754
+      ],
+      "area_m2": 1.65,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-16",
+      "name": "unknown",
+      "category": "unknown",
+      "polygon_2d": [
+        [
+          0.90958,
+          0.59313
+        ],
+        [
+          0.95058,
+          0.59313
+        ],
+        [
+          0.95058,
+          0.68232
+        ],
+        [
+          0.90958,
+          0.68232
+        ]
+      ],
+      "bbox_2d": [
+        0.93008,
+        0.63773,
+        0.041,
+        0.08919
+      ],
+      "confidence": 0.5,
+      "habitable": false,
+      "centroid_2d": [
+        0.93008,
+        0.63773
+      ],
+      "area_m2": 0.83,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-17",
+      "name": "unknown",
+      "category": "unknown",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.65785
+        ],
+        [
+          0.99582,
+          0.65785
+        ],
+        [
+          0.99582,
+          0.73284
+        ],
+        [
+          0.95058,
+          0.73284
+        ]
+      ],
+      "bbox_2d": [
+        0.9732,
+        0.69535,
+        0.04524,
+        0.07499
+      ],
+      "confidence": 0.5,
+      "habitable": false,
+      "centroid_2d": [
+        0.9732,
+        0.69535
+      ],
+      "area_m2": 0.77,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-18",
+      "name": "SAUNA",
+      "category": "bathroom",
+      "polygon_2d": [
+        [
+          0.08904,
+          0.6101
+        ],
+        [
+          0.21925,
+          0.6101
+        ],
+        [
+          0.21925,
+          0.81255
+        ],
+        [
+          0.08904,
+          0.81255
+        ]
+      ],
+      "bbox_2d": [
+        0.15415,
+        0.71132,
+        0.13021,
+        0.20245
+      ],
+      "confidence": 0.8,
+      "habitable": false,
+      "centroid_2d": [
+        0.15415,
+        0.71132
+      ],
+      "area_m2": 6.0,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-19",
+      "name": "TK",
+      "category": "utility",
+      "polygon_2d": [
+        [
+          0.95058,
+          0.73284
+        ],
+        [
+          0.99582,
+          0.73284
+        ],
+        [
+          0.99582,
+          0.81255
+        ],
+        [
+          0.95058,
+          0.81255
+        ]
+      ],
+      "bbox_2d": [
+        0.9732,
+        0.7727,
+        0.04524,
+        0.07971
+      ],
+      "confidence": 0.65,
+      "habitable": false,
+      "centroid_2d": [
+        0.9732,
+        0.7727
+      ],
+      "area_m2": 0.82,
+      "area_source": "estimated"
+    },
+    {
+      "id": "space-20",
+      "name": "KH",
+      "category": "bathroom",
+      "polygon_2d": [
+        [
+          0.86366,
+          0.68232
+        ],
+        [
+          0.95058,
+          0.68232
+        ],
+        [
+          0.95058,
+          0.87609
+        ],
+        [
+          0.86366,
+          0.87609
+        ]
+      ],
+      "bbox_2d": [
+        0.90712,
+        0.77921,
+        0.08692,
+        0.19377
+      ],
+      "confidence": 0.7,
+      "habitable": false,
+      "centroid_2d": [
+        0.90712,
+        0.77921
+      ],
+      "area_m2": 3.83,
+      "area_source": "estimated"
+    }
+  ],
+  "walls": [],
+  "fixtures": [
+    {
+      "id": "fixture-21",
+      "category": "door",
+      "bbox_2d": [
+        0.32053,
+        0.01776,
+        0.04786,
+        0.03552
+      ],
+      "polygon_2d": [
+        [
+          0.29661,
+          0.0
+        ],
+        [
+          0.34446,
+          0.0
+        ],
+        [
+          0.34446,
+          0.03552
+        ],
+        [
+          0.29661,
+          0.03552
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-8"
+    },
+    {
+      "id": "fixture-22",
+      "category": "door",
+      "bbox_2d": [
+        0.61686,
+        0.02644,
+        0.05287,
+        0.05288
+      ],
+      "polygon_2d": [
+        [
+          0.59043,
+          0.0
+        ],
+        [
+          0.64329,
+          0.0
+        ],
+        [
+          0.64329,
+          0.05288
+        ],
+        [
+          0.59043,
+          0.05288
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-4"
+    },
+    {
+      "id": "fixture-23",
+      "category": "door",
+      "bbox_2d": [
+        0.67474,
+        0.0955,
+        0.05287,
+        0.08208
+      ],
+      "polygon_2d": [
+        [
+          0.6483,
+          0.05446
+        ],
+        [
+          0.70117,
+          0.05446
+        ],
+        [
+          0.70117,
+          0.13654
+        ],
+        [
+          0.6483,
+          0.13654
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-4"
+    },
+    {
+      "id": "fixture-24",
+      "category": "door",
+      "bbox_2d": [
+        0.61742,
+        0.12076,
+        0.05175,
+        0.07577
+      ],
+      "polygon_2d": [
+        [
+          0.59154,
+          0.08287
+        ],
+        [
+          0.64329,
+          0.08287
+        ],
+        [
+          0.64329,
+          0.15864
+        ],
+        [
+          0.59154,
+          0.15864
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-4"
+    },
+    {
+      "id": "fixture-25",
+      "category": "door",
+      "bbox_2d": [
+        0.49917,
+        0.12707,
+        0.05454,
+        0.09155
+      ],
+      "polygon_2d": [
+        [
+          0.4719,
+          0.08129
+        ],
+        [
+          0.52643,
+          0.08129
+        ],
+        [
+          0.52643,
+          0.17285
+        ],
+        [
+          0.4719,
+          0.17285
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-5"
+    },
+    {
+      "id": "fixture-26",
+      "category": "door",
+      "bbox_2d": [
+        0.97607,
+        0.24507,
+        0.04674,
+        0.08129
+      ],
+      "polygon_2d": [
+        [
+          0.9527,
+          0.20442
+        ],
+        [
+          0.99944,
+          0.20442
+        ],
+        [
+          0.99944,
+          0.28571
+        ],
+        [
+          0.9527,
+          0.28571
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-11"
+    },
+    {
+      "id": "fixture-27",
+      "category": "door",
+      "bbox_2d": [
+        0.2404,
+        0.25572,
+        0.05342,
+        0.06156
+      ],
+      "polygon_2d": [
+        [
+          0.21369,
+          0.22494
+        ],
+        [
+          0.26711,
+          0.22494
+        ],
+        [
+          0.26711,
+          0.2865
+        ],
+        [
+          0.21369,
+          0.2865
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-8"
+    },
+    {
+      "id": "fixture-28",
+      "category": "window",
+      "bbox_2d": [
+        0.58792,
+        0.30702,
+        0.01614,
+        0.11208
+      ],
+      "polygon_2d": [
+        [
+          0.57986,
+          0.25099
+        ],
+        [
+          0.59599,
+          0.25099
+        ],
+        [
+          0.59599,
+          0.36306
+        ],
+        [
+          0.57986,
+          0.36306
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-6"
+    },
+    {
+      "id": "fixture-29",
+      "category": "door",
+      "bbox_2d": [
+        0.78548,
+        0.39108,
+        0.05398,
+        0.07972
+      ],
+      "polygon_2d": [
+        [
+          0.75849,
+          0.35122
+        ],
+        [
+          0.81247,
+          0.35122
+        ],
+        [
+          0.81247,
+          0.43094
+        ],
+        [
+          0.75849,
+          0.43094
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-2"
+    },
+    {
+      "id": "fixture-30",
+      "category": "window",
+      "bbox_2d": [
+        0.59154,
+        0.3974,
+        0.01669,
+        0.07024
+      ],
+      "polygon_2d": [
+        [
+          0.58319,
+          0.36227
+        ],
+        [
+          0.59989,
+          0.36227
+        ],
+        [
+          0.59989,
+          0.43252
+        ],
+        [
+          0.58319,
+          0.43252
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-6"
+    },
+    {
+      "id": "fixture-31",
+      "category": "door",
+      "bbox_2d": [
+        0.24207,
+        0.39976,
+        0.05676,
+        0.07814
+      ],
+      "polygon_2d": [
+        [
+          0.21369,
+          0.36069
+        ],
+        [
+          0.27045,
+          0.36069
+        ],
+        [
+          0.27045,
+          0.43883
+        ],
+        [
+          0.21369,
+          0.43883
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-8"
+    },
+    {
+      "id": "fixture-32",
+      "category": "door",
+      "bbox_2d": [
+        0.29661,
+        0.4045,
+        0.05899,
+        0.08919
+      ],
+      "polygon_2d": [
+        [
+          0.26711,
+          0.35991
+        ],
+        [
+          0.3261,
+          0.35991
+        ],
+        [
+          0.3261,
+          0.44909
+        ],
+        [
+          0.26711,
+          0.44909
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-8"
+    },
+    {
+      "id": "fixture-33",
+      "category": "door",
+      "bbox_2d": [
+        0.94658,
+        0.43212,
+        0.02337,
+        0.0513
+      ],
+      "polygon_2d": [
+        [
+          0.93489,
+          0.40647
+        ],
+        [
+          0.95826,
+          0.40647
+        ],
+        [
+          0.95826,
+          0.45777
+        ],
+        [
+          0.93489,
+          0.45777
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-13"
+    },
+    {
+      "id": "fixture-34",
+      "category": "window",
+      "bbox_2d": [
+        0.58876,
+        0.49684,
+        0.01669,
+        0.11602
+      ],
+      "polygon_2d": [
+        [
+          0.58041,
+          0.43883
+        ],
+        [
+          0.59711,
+          0.43883
+        ],
+        [
+          0.59711,
+          0.55485
+        ],
+        [
+          0.58041,
+          0.55485
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-6"
+    },
+    {
+      "id": "fixture-35",
+      "category": "window",
+      "bbox_2d": [
+        0.07151,
+        0.51579,
+        0.02393,
+        0.10339
+      ],
+      "polygon_2d": [
+        [
+          0.05954,
+          0.46409
+        ],
+        [
+          0.08347,
+          0.46409
+        ],
+        [
+          0.08347,
+          0.56748
+        ],
+        [
+          0.05954,
+          0.56748
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-18"
+    },
+    {
+      "id": "fixture-36",
+      "category": "window",
+      "bbox_2d": [
+        0.59126,
+        0.60103,
+        0.01836,
+        0.08603
+      ],
+      "polygon_2d": [
+        [
+          0.58208,
+          0.55801
+        ],
+        [
+          0.60045,
+          0.55801
+        ],
+        [
+          0.60045,
+          0.64404
+        ],
+        [
+          0.58208,
+          0.64404
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-6"
+    },
+    {
+      "id": "fixture-37",
+      "category": "door",
+      "bbox_2d": [
+        0.25181,
+        0.61365,
+        0.06177,
+        0.07814
+      ],
+      "polygon_2d": [
+        [
+          0.22092,
+          0.57459
+        ],
+        [
+          0.28269,
+          0.57459
+        ],
+        [
+          0.28269,
+          0.65272
+        ],
+        [
+          0.22092,
+          0.65272
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-18"
+    },
+    {
+      "id": "fixture-38",
+      "category": "door",
+      "bbox_2d": [
+        0.19143,
+        0.6397,
+        0.05676,
+        0.08445
+      ],
+      "polygon_2d": [
+        [
+          0.16305,
+          0.59747
+        ],
+        [
+          0.21981,
+          0.59747
+        ],
+        [
+          0.21981,
+          0.68193
+        ],
+        [
+          0.16305,
+          0.68193
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.75,
+      "space_id": "space-18"
+    },
+    {
+      "id": "fixture-39",
+      "category": "window",
+      "bbox_2d": [
+        0.58932,
+        0.73125,
+        0.01669,
+        0.16969
+      ],
+      "polygon_2d": [
+        [
+          0.58097,
+          0.64641
+        ],
+        [
+          0.59766,
+          0.64641
+        ],
+        [
+          0.59766,
+          0.8161
+        ],
+        [
+          0.58097,
+          0.8161
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-6"
+    },
+    {
+      "id": "fixture-40",
+      "category": "window",
+      "bbox_2d": [
+        0.22343,
+        0.73836,
+        0.01169,
+        0.10813
+      ],
+      "polygon_2d": [
+        [
+          0.21758,
+          0.68429
+        ],
+        [
+          0.22927,
+          0.68429
+        ],
+        [
+          0.22927,
+          0.79242
+        ],
+        [
+          0.21758,
+          0.79242
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-18"
+    },
+    {
+      "id": "fixture-41",
+      "category": "door",
+      "bbox_2d": [
+        0.83194,
+        0.78256,
+        0.06233,
+        0.08287
+      ],
+      "polygon_2d": [
+        [
+          0.80078,
+          0.74112
+        ],
+        [
+          0.86311,
+          0.74112
+        ],
+        [
+          0.86311,
+          0.82399
+        ],
+        [
+          0.80078,
+          0.82399
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-20"
+    },
+    {
+      "id": "fixture-42",
+      "category": "window",
+      "bbox_2d": [
+        0.92515,
+        0.89897,
+        0.02949,
+        0.03788
+      ],
+      "polygon_2d": [
+        [
+          0.91041,
+          0.88003
+        ],
+        [
+          0.9399,
+          0.88003
+        ],
+        [
+          0.9399,
+          0.91792
+        ],
+        [
+          0.91041,
+          0.91792
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.65,
+      "space_id": "space-20"
+    },
+    {
+      "id": "fixture-43",
+      "category": "door",
+      "bbox_2d": [
+        0.8286,
+        0.93528,
+        0.05899,
+        0.09945
+      ],
+      "polygon_2d": [
+        [
+          0.79911,
+          0.88556
+        ],
+        [
+          0.8581,
+          0.88556
+        ],
+        [
+          0.8581,
+          0.985
+        ],
+        [
+          0.79911,
+          0.985
+        ]
+      ],
+      "source": "roboflow",
+      "confidence": 0.7,
+      "space_id": "space-20"
+    }
+  ],
+  "nodes": [],
+  "edges": []
+}

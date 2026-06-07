@@ -1,0 +1,47 @@
+| Estate              | Rent (HK$/ft²/month) | Notes           |
+| ------------------- | -------------------- | --------------- |
+| Mei Foo Sun Chuen   | 32.0                 | large estate    |
+| Cullinan West       | 58.0                 | luxury new      |
+| Lohas Park LP6      | 42.0                 | new development |
+| The Wings           | 48.0                 | Tseung Kwan O   |
+| Metro City          | 40.0                 | mid             |
+| Ocean Shores        | 45.0                 | coastal         |
+| Park Central        | 42.0                 | mid-high        |
+| Laguna City         | 35.0                 | older           |
+| The Beaumont        | 36.0                 | new             |
+| Whampoa Garden      | 38.0                 | family estate   |
+| Metro Town          | 41.0                 | mid             |
+| Sorrento            | 72.0                 | luxury peak     |
+| Metro Harbour View  | 44.0                 | West Kowloon    |
+| Lohas Park Hemera   | 39.0                 | new             |
+| Grand Central       | 50.0                 | high-end        |
+| Tseung Kwan O Plaza | 43.0                 | mid             |
+| Laguna Verde        | 46.0                 | waterfront      |
+| Banyan Garden       | 43.0                 | mid             |
+| Telford Gardens     | 34.0                 | older           |
+| La Cite Noble       | 36.0                 | low-mid         |
+| Residence Oasis     | 41.0                 | mid             |
+| The Long Beach      | 55.0                 | luxury          |
+| Harbour Place       | 45.0                 | mid-high        |
+| Parc Oasis          | 50.0                 | luxury          |
+| Aquamarine          | 52.0                 | luxury          |
+| Royal Peninsula     | 44.0                 | mid             |
+| Liberte             | 43.0                 | mid             |
+| Amoy Gardens        | 35.0                 | old             |
+| Island Harbourview  | 48.0                 | luxury          |
+| Sky Tower           | 45.0                 | mid-high        |
+| The Pacifica        | 46.0                 | new             |
+| Harbour Green       | 53.0                 | luxury          |
+| Vibe Centro         | 52.0                 | luxury          |
+| Celestial Heights   | 50.0                 | luxury          |
+| Sceneway Garden     | 33.0                 | value           |
+| Grand Waterfront    | 44.0                 | mid             |
+| Galaxia             | 41.0                 | mid             |
+| Park Avenue         | 56.0                 | high            |
+| Victoria Skye       | 55.0                 | luxury          |
+| The Victoria Towers | 60.0                 | luxury          |
+| Hampton Place       | 46.0                 | mid-high        |
+| Tak Bo Garden       | 35.0                 | old             |
+| Manhattan Hill      | 58.0                 | luxury          |
+| The Latitude        | 48.0                 | mid-high        |
+| One Kai Tak         | 54.0                 | new CBD         |

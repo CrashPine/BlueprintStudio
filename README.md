@@ -1,478 +1,191 @@
-# construction-analyzer
+# FlowDraft × ArchDraft
 
-A modular, test-driven hackathon scaffold pairing an IDE-style Next.js shell with a LangGraph-powered FastAPI backend. Uploaded documents flow through a registry-backed ingestion pipeline into [MemoryPalace](https://github.com/jeffpierce/memory-palace) (PostgreSQL + pgvector + Ollama), while SQLite-backed registry and checkpoint state keep uploads and conversations durable.
+**Upload a Hong Kong floor plan → labeled rooms + m² → instant property valuation + BEEO-ready compliance.**
 
-```
-┌──────────────────────────────── construction-analyzer ──────────────────────────────┐
-│ Frontend shell → FastAPI backend → MemoryPalace + SQLite state                     │
-│ onboarding · file tree · graph · preview · chat · profile · settings               │
-│ /api/chat · /api/chat/sync · /api/ingest · /api/threads · /health · /ready         │
-└──────────────────────────────────────────────────────────────────────────────────────┘
-```
+One graph schema. Five diagram types. Built for HK PropTech and BEEO 2026.
 
-## Service Architecture
-
-These diagrams reflect the code in the repository today: the browser shell sends
-uploads and chat messages to FastAPI; the ingest pipeline turns documents into
-typed elements and stores them in MemoryPalace; chat runs through LangGraph and
-checkpoints thread history in SQLite.
-
-### Current Architecture
-
-```text
-┌──────────────────────────────────────────────────────────────────────────────────────┐
-│ Frontend shell                                                                       │
-│ onboarding · file tree · graph · preview · chat · profile · settings                 │
-├───────────────────────────────┬──────────────────────────────────────────────────────┤
-│ FastAPI backend               │ Persistence and services                             │
-│ /api/chat                     │ document registry (SQLite)                           │
-│ /api/chat/sync                │ thread checkpointer (SQLite)                         │
-│ /api/ingest                   │ MemoryPalace KB (PostgreSQL + pgvector + Ollama)     │
-│ /api/threads                  │ raw uploads                                           │
-│ /health · /ready              │ optional visual analysis for figure-like elements    │
-│ LangGraph agent + KB tools    │                                                       │
-│ ingestion pipeline            │                                                       │
-└───────────────────────────────┴──────────────────────────────────────────────────────┘
-```
-
-### Ingestion Flow
-
-```text
-User uploads a PDF, Markdown file, or plain text
-        |
-        v
-Upload validation, hashing, and registry deduplication
-        |
-        v
-Document parser turns files into typed elements
-        |
-        v
-Optional visual-only enrichment for chart, diagram, drawing, and image elements
-        |
-        v
-Elements are chunked with provenance and stored in MemoryPalace
-        |
-        v
-Registry status is updated to indexed or failed
-```
-
-### Chat and Thread Flow
-
-```text
-User sends a message
-        |
-        v
-Frontend calls /api/chat or /api/chat/sync
-        |
-        v
-LangGraph injects the system prompt and invokes kb_recall / kb_remember
-        |
-        v
-Streaming tokens and tool events return to the browser
-        |
-        v
-Thread state is checkpointed in SQLite and histories are replayed through /api/threads/{id}/history
-```
-
-### Report Generation Pipeline
-
-The "Build Report" button kicks off a multi-stage workflow whose progress is
-streamed back to the browser over Server-Sent Events. Two human-in-the-loop
-gates (template confirmation and validation) can pause the pipeline until the
-user answers; the final PDF is produced by ReportLab and downloaded directly
-from the export endpoint.
-
-```text
-        ┌──────────────────────────────────────────────────────────────┐
-        │  User clicks "Build Report"  (ChatPanel.tsx)                 │
-        └───────────────┬──────────────────────────────────────────────┘
-                        │
-          ┌─────────────┴──────────────┐
-          v                            v
- ┌──────────────────────┐    ┌────────────────────────────────────┐
- │ POST /api/reports    │    │ GET  /api/reports/{id}/stream  SSE │
- │ launch_report_session│    │ stream_report_session              │
- └──────────┬───────────┘    └──────────────┬─────────────────────┘
-            │                               ^
-            v                               │ ReportCard / ReportGate
- ┌──────────────────────────────────────────┴─────────────────────┐
- │  ReportPipeline   (backend/app/services/report_pipeline.py)    │
- │                                                                │
- │   start() ──► [ Gate: template confirmation ]                  │
- │                       │ answer_gate                            │
- │                       v                                        │
- │   ┌──────────────────────────────────────────────────────────┐ │
- │   │ 1. Inventory   build_source_inventory()                  │ │
- │   │ 2. Plan        build_general_project_dossier_section_…() │ │
- │   │ 3. Retrieval   retrieve_section_evidence()               │ │
- │   │ 4. Draft       draft_report_sections()                   │ │
- │   │ 5. Validation  validate_report_projection()              │ │
- │   └──────────────────────┬───────────────────────────────────┘ │
- │                          │                                     │
- │              blockers?   │   no blockers                       │
- │              ┌───────────┴──────────┐                          │
- │              v                      │                          │
- │              | [ Gate: validation ] │                          │
- │              │ answer_gate          │                          │
- │              └──────────┬───────────┘                          │
- │                         v                                      │
- │   6. Export   report_exporter.export_report_pdf()              │
- │                 │  (ReportLab → A4 PDF, atomic move)           │
- │                 v                                              │
- │   /app/data/exports/{session_id}-report.pdf                    │
- │                 │                                              │
- │                 v                                              │
- │   export.status = ready  •  session = complete  ── done ──┐    │
- └───────────────────────────────────────────────────────────┼────┘
-                                                             │
-                                                             v
-                                       ┌────────────────────────────────┐
-                                       │ ReportView.tsx                 │
-                                       │   • stages / artifacts         │
-                                       │   • validation findings        │
-                                       │   • gate prompts               │
-                                       │   • download link              │
-                                       └──────────────┬─────────────────┘
-                                                      │  click download
-                                                      v
-                       GET /api/reports/{id}/exports/{ex}/download
-                          → FileResponse(application/pdf)
-```
-
-Key files:
-
-- Frontend trigger: [`frontend/src/components/chat/ChatPanel.tsx`](frontend/src/components/chat/ChatPanel.tsx) · API client: [`frontend/src/lib/api.ts`](frontend/src/lib/api.ts) · UI: [`frontend/src/components/report/ReportView.tsx`](frontend/src/components/report/ReportView.tsx)
-- Backend routes: [`backend/app/api/reports.py`](backend/app/api/reports.py)
-- Orchestration: [`backend/app/services/report_pipeline.py`](backend/app/services/report_pipeline.py)
-- PDF export: [`backend/app/services/report_exporter.py`](backend/app/services/report_exporter.py)
-
-## Stack
-
-| Layer | Technology |
-|---|---|
-| Frontend | Next.js 14 (App Router) · TypeScript · Tailwind · Framer Motion · Zustand · `react-markdown` |
-| Backend | FastAPI · LangGraph · LangChain · pydantic-settings · sse-starlette |
-| Knowledge base | MemoryPalace (in-process Python library) backed by **PostgreSQL 16 + pgvector** and **Ollama** for embeddings |
-| Thread persistence | LangGraph `AsyncSqliteSaver` (SQLite) |
-| Orchestration | Docker Compose (4 services, named volumes, healthchecks, dependency-ordered startup) |
-| Tests | pytest + httpx + respx (backend) · Vitest + RTL + MSW (frontend) · Playwright (e2e) · bash smoke script |
+![Floor plan overlay](static/demo/f2_overlay.png)
 
 ---
 
-## Prerequisites
+## For jurors — run with Docker (recommended)
 
-### macOS
+**Requirements:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows / Mac) or Docker Engine (Linux).
 
-```bash
-# Docker Desktop (recommended) OR colima
-brew install --cask docker            # Docker Desktop, then launch it once
-# OR
-brew install colima docker docker-compose && colima start
-
-# (Optional) for the host-side helpers
-brew install make curl python@3.12 node@20
-```
-
-### Linux (Ubuntu / Debian)
+### 1. Clone and start
 
 ```bash
-# Docker Engine + Compose plugin
-sudo apt install -y docker.io docker-compose-plugin make curl python3 nodejs npm
-sudo usermod -aG docker "$USER"   # log out / back in for this to take effect
+git clone https://github.com/CrashPine/BlueprintStudio.git
+cd BlueprintStudio
+docker compose up --build
 ```
 
-Both platforms also need:
+First build takes **10–20 minutes** (downloads Python ML stack). Later starts are seconds.
 
-| Tool | Why | Install |
-|---|---|---|
-| `docker` 24+ and `docker compose` v2 | Run all four containers | see above |
-| `make` | Convenience targets in the root `Makefile` | `xcode-select --install` (Mac) or `apt install make` (Linux) |
-| `curl` | Used by `make smoke` | preinstalled on both |
-| `python3` | JSON parsing inside `make smoke` | preinstalled on both |
-| `node` 20+ (optional) | Run frontend tests on the host | see above |
+### 2. Open the app
 
-> No host-side install of Postgres, pgvector, or Ollama is required — they ship in containers. The `pgvector/pgvector:pg16` image bundles the extension; the `ollama/ollama` image bundles the inference engine.
+| URL | What it is |
+|-----|------------|
+| http://localhost:8000 | Main UI — upload / demo / valuation / compliance |
+| http://localhost:8000/static/twin.html | 3D building twin |
+| http://localhost:8000/static/roadmap.html | Capability map |
+| http://localhost:8000/docs | API (Swagger) |
 
----
+### 3. Demo without API keys (offline-safe)
 
-## First-time setup
+1. Open http://localhost:8000
+2. Click **Load demo** — pre-baked F2 floor plan (20 rooms, overlay, valuation, compliance)
+3. Tabs: **Overlay** → **Rooms** → **Valuation** → **Compliance** → **Run compliance check**
 
-```bash
-git clone <this repo> construction-analyzer
-cd construction-analyzer
+No network or API keys needed for the demo path.
 
-cp .env.example .env
-# Edit .env:
-#   - LLM_PROVIDER=openai     and set OPENAI_API_KEY=sk-...
-#     OR
-#   - LLM_PROVIDER=ollama     (no key needed; slower)
-#   - KB_BACKEND=memorypalace (default; uses Postgres + Ollama)
-#     OR
-#   - KB_BACKEND=fake         (no Ollama/Postgres; in-memory only — handy for the very first boot)
-```
+### 4. Live parse (optional — needs API keys)
 
-### Bring everything up
+To parse your own floor-plan image:
 
-```bash
-make up                # build images and start frontend + backend + postgres + ollama
-make pull-models       # one-time: pull the Ollama models MemoryPalace needs
-make smoke             # end-to-end pipeline check
-```
-
-Open http://localhost:3000.
-
-The first `make up` typically takes 5–10 minutes because the backend image clones and installs MemoryPalace from GitHub. Subsequent builds are cached.
-
-### Verifying the wiring quickly
-
-If you don't yet have an `OPENAI_API_KEY` and Ollama hasn't pulled its models, run:
-
-```bash
-SKIP_CHAT=1 make smoke    # checks /health, /ready, frontend reachability — proves the wiring
-```
-
-Once you've set `OPENAI_API_KEY=sk-...` (recommended for hackathon speed) **or** pulled an Ollama model that supports tool calling (`make pull-models`), run the full thing:
-
-```bash
-make smoke                # full round-trip including a real chat reply on a fresh thread,
-                          # then a second turn on the same thread that hits the checkpointer
-```
-
----
-
-## Document ingestion (secure)
-
-The `backend/data/documents/` folder is **gitignored** and **cursorignored** (see [.gitignore](.gitignore) and [.cursorignore](.cursorignore)). Anything you drop in there stays on your machine.
-
-### Two ingestion paths
-
-1. **Drop files into the host folder** (auto-mounted into the backend container):
-   ```bash
-   cp ~/Downloads/spec-sheet.pdf backend/data/documents/
-   curl -X POST http://localhost:8000/api/ingest \
-        -F "files=@backend/data/documents/spec-sheet.pdf"
+1. Copy `.env.example` → `.env`
+2. Add keys (or mount key files — see below):
    ```
-
-2. **Upload via the API** from the frontend or curl:
-   ```bash
-   curl -X POST http://localhost:8000/api/ingest \
-        -F "files=@./contract.pdf" \
-        -F "files=@./notes.md"
+   ANTHROPIC_API_KEY=sk-ant-...
+   ROBOFLOW_API_KEY=...
    ```
+3. Restart: `docker compose down && docker compose up`
+4. Upload a plan on the main page
 
-Supported extensions: `.pdf`, `.md`, `.markdown`, `.txt`. Files are chunked, embedded by Ollama (`nomic-embed-text` by default), and stored in MemoryPalace's Postgres + pgvector tables.
+Keys are **not** in the repo. `docker-compose.yml` mounts `./models` read-only — you can instead place keys in:
 
-### Ask about your documents
+- `models/secretapi.txt` (Anthropic, one line)
+- `models/roboflow_key.txt` (Roboflow, one line)
+
+### 5. Stop
 
 ```bash
-curl -X POST http://localhost:8000/api/chat/sync \
-  -H "Content-Type: application/json" \
-  -d '{"message":"summarise the spec sheet","thread_id":"demo-1"}'
+docker compose down
 ```
 
-Or just chat in the UI — the agent calls `kb_recall` automatically.
-
----
-
-## Running tests
-
-### Backend (pytest, in-container)
+### Health check
 
 ```bash
-make test-backend      # 64 unit + integration tests, fully hermetic
+curl http://localhost:8000/health
+# → {"ok":true,"product":"ArchDraft x FlowDraft"}
 ```
 
-Or run on the host with a Python 3.12 venv:
+### Jury demo script (automated)
 
-```bash
-cd backend
-python3.12 -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
-pytest -q
+```powershell
+.\scripts\demo_jury.ps1              # starts Docker + opens tabs + prints talk track
+.\scripts\demo_jury.ps1 -LiveParse   # also smoke-tests live /parse (needs API keys)
 ```
 
-The MemoryPalace integration test (`tests/integration/test_memorypalace_kb.py`) is automatically **skipped** unless Postgres + Ollama are reachable and the `memory_palace` package is importable. Inside the running compose stack:
+See **`HONESTY.md`** for what is fully live vs frozen demo assets.
+
+### Optional services
 
 ```bash
-docker compose exec backend pytest -q -m integration
-```
-
-### Frontend (Vitest + RTL + MSW, in-container)
-
-```bash
-make test-frontend     # 26 unit tests
-```
-
-Or on the host:
-
-```bash
-cd frontend
-npm install
-npm test
-```
-
-### End-to-end pipeline
-
-```bash
-make up                # full stack
-make smoke             # 6-step curl-based round-trip
-```
-
-`make smoke` proves the entire wiring:
-1. `/health` is reachable
-2. `/ready` reports component status
-3. First chat turn returns an assistant message on a fresh `thread_id`
-4. Second chat turn on the same `thread_id` succeeds
-5. `/api/threads/{id}/history` returns ≥ 4 messages — the LangGraph checkpointer is persisting
-6. Frontend `/api/health` (or `/`) responds
-
-### Browser e2e (Playwright)
-
-```bash
-cd frontend
-npm run e2e:install    # one-time: download Chromium
-cd ..
-make e2e               # send a chat, reload the page, assert history rehydrates
+docker compose --profile postgres up --build   # Postgres for compliance DB
+docker compose --profile ollama up --build    # local embeddings (dedup)
 ```
 
 ---
 
-## Common operations
+## 3-minute demo script (for presentation)
 
-| Command | What it does |
-|---|---|
-| `make up` | Build and start all containers |
-| `make down` | Stop everything (data preserved in named volumes) |
-| `make logs` | Tail logs from all services |
-| `make ps` | Show service status |
-| `make rebuild` | Force a full rebuild |
-| `make pull-models` | Pull `nomic-embed-text` + `qwen3:1.7b` into the Ollama container |
-| `make pg-shell` | Open `psql` against the MemoryPalace database |
-| `make pg-index` | Add an HNSW index on the `memories.embedding` column for faster recall |
-| `make backend-shell` | `bash` inside the backend container |
-| `make frontend-shell` | `sh` inside the frontend container |
-| `make clean` | Stop and remove containers **and named volumes** (destructive) |
-| `make clean-data` | Wipe local `backend/data/` (documents + checkpointer) |
+1. **0:00** — Open http://localhost:8000 → click **Load demo**
+2. **0:20** — Overlay tab: "20 rooms, labeled automatically with areas"
+3. **0:45** — Rooms tab: scroll the breakdown table
+4. **1:10** — Valuation tab: Kowloon district → HKD value + rental ROI
+5. **1:40** — Compliance → **Run compliance check**: TIA-942 violations
+6. **2:10** — [Roadmap](static/roadmap.html) + [3D Twin](static/twin.html)
+7. **2:40** — Q&A
 
 ---
 
-## Troubleshooting
+## Local development (without Docker)
 
-### "Port 3000 / 8000 / 5432 / 11434 already in use"
+```powershell
+cd eurotech
+python -m venv .venv
+.venv\Scripts\activate          # Mac/Linux: source .venv/bin/activate
+pip install -r requirements.txt
 
-Something else on your host is listening. Either stop that process or override the port mapping in [docker-compose.yml](docker-compose.yml). Mac's AirPlay Receiver hijacks 5000 by default but does not touch any of our ports.
-
-### Backend `/ready` shows `degraded`
-
-Read the `detail` field. Most common causes:
-
-- `ollama` — models not pulled yet → `make pull-models`
-- `postgres` — Postgres still booting on first run → wait 10s and retry
-- `kb` — `KB_BACKEND=memorypalace` but `memory_palace` failed to import (check `docker compose logs backend` for the install-time error and re-run `make rebuild`). As a temporary workaround, set `KB_BACKEND=fake` in `.env` and `make restart`.
-
-### The first chat reply is very slow (or times out)
-
-Ollama on CPU only is slow. **First inference for a new model can take several minutes** — the model is loaded into memory from disk, and on machines without GPU passthrough every token is computed on the CPU. Symptoms: `make smoke` hangs at step 3, browser shows the typing indicator forever, `docker stats` shows the `ollama` container at 1000%+ CPU.
-
-Workarounds, in order of recommendation:
-
-1. **Use OpenAI for the chat LLM** — fastest path:
-   ```bash
-   # in .env
-   LLM_PROVIDER=openai
-   OPENAI_API_KEY=sk-...
-   ```
-   MemoryPalace still uses Ollama for its embeddings, but those are tiny (~150ms per call after warmup).
-
-2. **Pull a smaller tool-capable model** for Ollama:
-   ```bash
-   docker compose exec ollama ollama pull qwen3:1.7b   # ~1GB, decent quality
-   # or, even smaller:
-   docker compose exec ollama ollama pull qwen3:0.6b   # ~500MB, very lean
-   ```
-   Update `OLLAMA_MODEL` and `MEMORY_PALACE_LLM_MODEL` in `.env`, then `docker compose up -d backend` to reload.
-
-3. **Run Ollama natively on the host** (Mac/Linux) so it can use the GPU:
-   ```bash
-   brew install ollama && ollama serve   # macOS
-   # or apt-style on Linux
-   ```
-   Then in `.env` set `OLLAMA_HOST=http://host.docker.internal:11434` and remove the `ollama` service from `docker-compose.yml`.
-
-4. **Use `SKIP_CHAT=1 make smoke`** to confirm the rest of the wiring while you sort the LLM out.
-
-If `KB_BACKEND=memorypalace` and you haven't pulled `nomic-embed-text` yet, every ingest call will also hang. Run `make pull-models` first.
-
-### Apple Silicon: which Ollama model?
-
-The defaults (`nomic-embed-text` + `qwen3:1.7b`) run comfortably on M1/M2/M3 with 8–16 GB. If you have ≥ 24 GB and want better answers:
-
-```bash
-docker compose exec ollama ollama pull qwen3:8b
-# Then in .env:
-OLLAMA_MODEL=qwen3:8b
-MEMORY_PALACE_LLM_MODEL=qwen3:8b
+copy .env.example .env            # add API keys for live parse
+python -m uvicorn src.api:app --reload
+# → http://127.0.0.1:8000
 ```
 
-### SSE responses appear "all at once"
-
-You are likely viewing the response through a proxy that buffers. Use `curl --no-buffer` and ensure no nginx / Cloudflare in between.
-
-### "memory_palace not installed" warnings on container startup
-
-The backend Dockerfile installs MemoryPalace from `git+https://github.com/jeffpierce/memory-palace.git@main`. Network hiccups during build can fail this step (the Dockerfile is tolerant and continues so you still get a working image). If you see the warning at runtime, run `make rebuild` on a healthy network. As a fallback, the backend gracefully falls back to `KB_BACKEND=fake` if the package is missing.
-
-### "permission denied" writing to `backend/data/`
-
-```bash
-mkdir -p backend/data/documents
-chmod -R u+rw backend/data/
-```
-
-### Wipe everything and start fresh
-
-```bash
-make clean         # removes containers + volumes (postgres, ollama, checkpointer)
-make clean-data    # removes local documents and checkpointer file
-make up
-make pull-models
-```
+Click **Load demo** for a stage-safe demo with no network.
 
 ---
 
-## Repository layout
+## Architecture
 
-```
-construction-analyzer/
-├── README.md                       (this file)
-├── docker-compose.yml              4 services + named volumes + healthchecks
-├── Makefile                        Mac + Linux compatible
-├── .env.example
-├── .gitignore                      includes backend/data/, *.pdf, *.docx, ...
-├── .cursorignore                   identical scope as .gitignore
-├── scripts/
-│   └── smoke.sh                    bash, no GNU-isms — runs on Mac and Linux
-├── backend/                        see backend/README.md
-│   ├── Dockerfile                  python:3.12-slim + memory_palace via pip
-│   ├── pyproject.toml
-│   ├── app/                        FastAPI + LangGraph + KB interface
-│   ├── tests/                      unit + integration + gated e2e
-│   └── data/                       GITIGNORED runtime state
-└── frontend/                       see frontend/README.md
-    ├── Dockerfile                  multi-stage Node 20 alpine, output: standalone
-    ├── package.json
-    ├── src/                        Next.js App Router
-    └── tests/                      Vitest + RTL + MSW + Playwright
+```mermaid
+flowchart TB
+    upload[Upload image] --> router[fusion.parse_unified]
+    router --> fp[floorplan_hybrid]
+    router --> pid[pid_hybrid]
+    router --> dc[datacenter]
+    fp --> gjson["Graph JSON"]
+    pid --> gjson
+    dc --> gjson
+    gjson --> overlay[Overlay + Rooms]
+    gjson --> finance["/finance/property"]
+    gjson --> compliance["/compliance/validate"]
 ```
 
-## Architecture choices
+| Layer | Modules |
+|-------|---------|
+| **Parse** | Roboflow + Claude (floor plans), YOLO + Claude (P&ID), OpenCV + Claude (DC) |
+| **Schema** | `schemas/graph.schema.json`, `schemas/dc_*.schema.json` |
+| **Analytics** | HK property valuation, PUE/BEC, electrical loads |
+| **Compliance** | TIA-942 rule extraction + geometry validation |
 
-- **MemoryPalace as a library, not an MCP sidecar.** Single backend container, faster startup, cleaner debugging. The `KnowledgeBase` interface in [backend/app/kb/base.py](backend/app/kb/base.py) abstracts the implementation, so swapping to an external MCP server is a one-file change.
-- **Pluggable LLM provider.** [backend/app/agent/llm.py](backend/app/agent/llm.py) selects OpenAI or Ollama from `LLM_PROVIDER`. The agent code never imports a concrete provider.
-- **`AsyncSqliteSaver` checkpointer.** [backend/app/agent/checkpointer.py](backend/app/agent/checkpointer.py) persists thread state across backend restarts. The frontend's `localStorage` thread id and the backend's checkpointer together guarantee history rehydrates after a reload.
-- **All-fake test mode.** Every test runs against `FakeKB` + `ScriptedChatModel` + `AsyncSqliteSaver(":memory:")`. No network, no Postgres, no Ollama. The MemoryPalace integration test runs only when those services are actually present.
-- **Health vs readiness split.** `/health` never depends on external services and is what container orchestrators poll. `/ready` actively probes Postgres + Ollama + KB and is what the frontend connection badge surfaces.
+Full file inventory: [`docs/REPOSITORY_GUIDE.md`](docs/REPOSITORY_GUIDE.md)
 
-## License
+## API (key routes)
 
-MIT.
+| Route | Purpose |
+|-------|---------|
+| `POST /parse` | Upload diagram → graph JSON |
+| `POST /overlay` | Render labeled overlay PNG |
+| `GET /demo/floorplan` | Frozen demo graph + overlay |
+| `POST /finance/property` | HK property valuation |
+| `POST /compliance/validate` | TIA-942 geometry check |
+| `GET /docs` | Swagger UI |
+
+Production CLI: `python scripts/infer.py <image> --type FLOORPLAN --out data/parsed.json`
+
+## Configuration
+
+| Path | Purpose |
+|------|---------|
+| `config/bec_rules.yaml` | PUE thresholds, tariff assumptions |
+| `config/class_map.yaml` | YOLO class → node type mapping |
+| `config/property_prices/` | HK district price/rent tables |
+| `models/yolov8n_pid.pt` | Trained P&ID weights (from Kaggle notebook) |
+
+API keys: `ANTHROPIC_API_KEY`, `ROBOFLOW_API_KEY` in `.env` or `models/*.txt` (gitignored).
+
+## Tests
+
+```powershell
+python -m uvicorn src.api:app
+python tests/test_pipeline.py
+```
+
+## Frozen demo assets (stage-safe)
+
+| File | Purpose |
+|------|---------|
+| `data/demo_floorplan.json` | Parsed F2 floor plan |
+| `static/demo/f2_overlay.png` | Pre-baked overlay |
+| `data/demo_compliance_report.json` | TIA-942 violations demo |
+| `data/demo_datacentre.json` | Fused datacenter demo |
+
+## Docker files
+
+| File | Purpose |
+|------|---------|
+| `Dockerfile` | Python 3.11 + Tesseract + OpenCV + ML stack |
+| `docker-compose.yml` | App on port 8000, optional Postgres/Ollama |
+| `.env.example` | API key template (copy to `.env`) |
