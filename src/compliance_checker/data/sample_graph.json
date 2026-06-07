@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArchDraft x FlowDraft Unified Graph",
+  "meta": {
+    "diagram_id": "sample_dc_01",
+    "diagram_type": "FUSED",
+    "source_file": "sample.png",
+    "image_width": 1000,
+    "image_height": 800,
+    "parse_confidence": 0.9,
+    "parser": "claude",
+    "pue": 1.7,
+    "it_power_kW": 200.0,
+    "facility_power_kW": 340.0,
+    "target_pue": 1.5
+  },
+  "spaces": [
+    {
+      "id": "data_hall_1",
+      "name": "Data Hall 1",
+      "category": "data_hall",
+      "polygon_2d": [
+        [0.05, 0.1],
+        [0.5, 0.1],
+        [0.5, 0.6],
+        [0.05, 0.6]
+      ],
+      "area_m2": 288.0,
+      "it_power_kW": 200.0,
+      "confidence": 0.95
+    },
+    {
+      "id": "elec_1",
+      "name": "Electrical Room",
+      "category": "electrical_room",
+      "polygon_2d": [
+        [0.55, 0.1],
+        [0.75, 0.1],
+        [0.75, 0.4],
+        [0.55, 0.4]
+      ],
+      "area_m2": 76.8,
+      "confidence": 0.92
+    }
+  ],
+  "nodes": [
+    {
+      "id": "rack_0_0",
+      "type": "rack",
+      "tag": "R00",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.075, 0.125, 0.09, 0.15625],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_0_1",
+      "type": "rack",
+      "tag": "R01",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.1, 0.125, 0.115, 0.15625],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_0_2",
+      "type": "rack",
+      "tag": "R02",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.125, 0.125, 0.14, 0.15625],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_1_0",
+      "type": "rack",
+      "tag": "R10",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.075, 0.1875, 0.09, 0.21875],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_1_1",
+      "type": "rack",
+      "tag": "R11",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.1, 0.1875, 0.115, 0.21875],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_1_2",
+      "type": "rack",
+      "tag": "R12",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.125, 0.1875, 0.14, 0.21875],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_2_0",
+      "type": "rack",
+      "tag": "R20",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.075, 0.25, 0.09, 0.28125],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_2_1",
+      "type": "rack",
+      "tag": "R21",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.1, 0.25, 0.115, 0.28125],
+      "confidence": 0.9
+    },
+    {
+      "id": "rack_2_2",
+      "type": "rack",
+      "tag": "R22",
+      "space_id": "data_hall_1",
+      "attributes": { "rack_count": 1, "rated_power_kW": 5.0 },
+      "bbox_2d": [0.125, 0.25, 0.14, 0.28125],
+      "confidence": 0.9
+    },
+    {
+      "id": "crac_1",
+      "type": "crac",
+      "tag": "CRAC-1",
+      "space_id": "data_hall_1",
+      "attributes": { "rated_power_kW": 50.0, "capacity": { "value": 80, "unit": "kW" } },
+      "bbox_2d": [0.4, 0.125, 0.45, 0.1875],
+      "confidence": 0.88
+    },
+    {
+      "id": "pdu_1",
+      "type": "pdu",
+      "tag": "PDU-1",
+      "space_id": "elec_1",
+      "attributes": { "rated_power_kW": 150.0 },
+      "bbox_2d": [0.575, 0.125, 0.6, 0.1875],
+      "confidence": 0.9
+    }
+  ],
+  "edges": [
+    {
+      "id": "cable_1",
+      "type": "electrical_cable",
+      "from": "pdu_1",
+      "to": "rack_0_0",
+      "attributes": { "ampacity_A": 200, "phase": 3 },
+      "confidence": 0.9
+    }
+  ]
+}

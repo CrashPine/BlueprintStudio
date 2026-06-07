@@ -1,5 +1,0 @@
-to run with fresh rules, do:
-python dc_compliance_checker/main.py --reparse
-
-to run with old rules, do:
-python dc_compliance_checker/main.py 

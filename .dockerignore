@@ -1,0 +1,50 @@
+# ── VCS / tooling ──
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.md
+docs/
+
+# ── Python caches / envs ──
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ── secrets (NEVER bake into the image — pass via env or volume mount) ──
+.env
+models/secretapi.txt
+models/roboflow_key.txt
+*.key
+
+# ── large / scratch ML + scratch artifacts ──
+runs/
+whole/
+/yolov8n.pt
+/yolo26n.pt
+
+# ── generated scratch data (demo JSON is kept; overlays/marks/parses are not) ──
+data/overlay_*.png
+data/*_marks_*.png
+data/parsed_*.json
+data/_roboflow_tmp.png
+data/datacenter/
+
+# ── compliance local artifacts (rebuilt at runtime) ──
+src/compliance_checker/data/dc_compliance.db
+src/compliance_checker/data/.rules_cache/
+
+*.log
+
+# ── docker's own files ──
+.docker/
+docker-compose*.yml
+Dockerfile
+.dockerignore

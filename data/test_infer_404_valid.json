@@ -1,0 +1,2902 @@
+{
+  "meta": {
+    "diagram_id": "pid-hybrid-images__train__404",
+    "diagram_type": "PID",
+    "source_file": "images__train__404.jpg",
+    "image_width": 2048,
+    "image_height": 1303,
+    "parse_confidence": 0.72,
+    "parser": "yolo+claude",
+    "topology": "set_of_marks",
+    "warnings": [],
+    "title": "SYNTHETIC PROCESS FLOW DIAGRAM - SYNTHETIC PROCESS ENGINEERING FLOW SCHEME",
+    "drawing_number": "20448719"
+  },
+  "spaces": [],
+  "walls": [],
+  "fixtures": [],
+  "nodes": [
+    {
+      "id": "node-1",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-1",
+      "attributes": {},
+      "bbox_2d": [
+        0.11082,
+        0.11222,
+        0.0136,
+        0.01731
+      ],
+      "confidence": 0.604
+    },
+    {
+      "id": "node-2",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "GU-7216",
+      "attributes": {},
+      "bbox_2d": [
+        0.11154,
+        0.11144,
+        0.01624,
+        0.02554
+      ],
+      "confidence": 0.651
+    },
+    {
+      "id": "node-3",
+      "type": "fitting",
+      "sub_type": "fitting.closed_fig8_blind.pip",
+      "tag": "fitting-3",
+      "attributes": {},
+      "bbox_2d": [
+        0.14423,
+        0.10886,
+        0.00791,
+        0.02656
+      ],
+      "confidence": 0.372
+    },
+    {
+      "id": "node-4",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "valve-4",
+      "attributes": {},
+      "bbox_2d": [
+        0.22858,
+        0.11384,
+        0.0128,
+        0.01239
+      ],
+      "confidence": 0.454
+    },
+    {
+      "id": "node-5",
+      "type": "unknown",
+      "sub_type": "piping_insulation.niso",
+      "tag": "INS-5",
+      "attributes": {},
+      "bbox_2d": [
+        0.26973,
+        0.1126,
+        0.02204,
+        0.01233
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": "node-6",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "GH-82336",
+      "attributes": {},
+      "bbox_2d": [
+        0.30887,
+        0.11228,
+        0.01765,
+        0.02724
+      ],
+      "confidence": 0.567
+    },
+    {
+      "id": "node-7",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-7",
+      "attributes": {},
+      "bbox_2d": [
+        0.42328,
+        0.1128,
+        0.00917,
+        0.0146
+      ],
+      "confidence": 0.321
+    },
+    {
+      "id": "node-8",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-8",
+      "attributes": {},
+      "bbox_2d": [
+        0.42683,
+        0.11212,
+        0.00887,
+        0.01525
+      ],
+      "confidence": 0.461
+    },
+    {
+      "id": "node-9",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-9",
+      "attributes": {},
+      "bbox_2d": [
+        0.14986,
+        0.12418,
+        0.00583,
+        0.01145
+      ],
+      "confidence": 0.175
+    },
+    {
+      "id": "node-10",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-10",
+      "attributes": {},
+      "bbox_2d": [
+        0.48852,
+        0.12426,
+        0.01064,
+        0.01279
+      ],
+      "confidence": 0.224
+    },
+    {
+      "id": "node-11",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-11",
+      "attributes": {},
+      "bbox_2d": [
+        0.4873,
+        0.12831,
+        0.00892,
+        0.00668
+      ],
+      "confidence": 0.658
+    },
+    {
+      "id": "node-12",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-12",
+      "attributes": {},
+      "bbox_2d": [
+        0.4082,
+        0.14233,
+        0.01588,
+        0.02584
+      ],
+      "confidence": 0.684
+    },
+    {
+      "id": "node-13",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "YU-5382",
+      "attributes": {},
+      "bbox_2d": [
+        0.40834,
+        0.14216,
+        0.01616,
+        0.02645
+      ],
+      "confidence": 0.709
+    },
+    {
+      "id": "node-14",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-14",
+      "attributes": {},
+      "bbox_2d": [
+        0.46681,
+        0.17468,
+        0.00573,
+        0.01535
+      ],
+      "confidence": 0.794
+    },
+    {
+      "id": "node-15",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-15",
+      "attributes": {},
+      "bbox_2d": [
+        0.54539,
+        0.17485,
+        0.01151,
+        0.01582
+      ],
+      "confidence": 0.658
+    },
+    {
+      "id": "node-16",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-16",
+      "attributes": {},
+      "bbox_2d": [
+        0.621,
+        0.17465,
+        0.00799,
+        0.02395
+      ],
+      "confidence": 0.718
+    },
+    {
+      "id": "node-17",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-17",
+      "attributes": {},
+      "bbox_2d": [
+        0.62663,
+        0.1747,
+        0.01691,
+        0.02734
+      ],
+      "confidence": 0.74
+    },
+    {
+      "id": "node-18",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-18",
+      "attributes": {},
+      "bbox_2d": [
+        0.57775,
+        0.18206,
+        0.00785,
+        0.02445
+      ],
+      "confidence": 0.294
+    },
+    {
+      "id": "node-19",
+      "type": "fitting",
+      "sub_type": "fitting.closed_fig8_blind.pip",
+      "tag": "fitting-19",
+      "attributes": {},
+      "bbox_2d": [
+        0.57913,
+        0.18198,
+        0.00646,
+        0.02398
+      ],
+      "confidence": 0.235
+    },
+    {
+      "id": "node-20",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-20",
+      "attributes": {},
+      "bbox_2d": [
+        0.66674,
+        0.17511,
+        0.00636,
+        0.01527
+      ],
+      "confidence": 0.426
+    },
+    {
+      "id": "node-21",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "UV-4528",
+      "attributes": {},
+      "bbox_2d": [
+        0.60735,
+        0.20176,
+        0.00758,
+        0.02012
+      ],
+      "confidence": 0.265
+    },
+    {
+      "id": "node-22",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "AB-30404",
+      "attributes": {},
+      "bbox_2d": [
+        0.36726,
+        0.20627,
+        0.01537,
+        0.01684
+      ],
+      "confidence": 0.505
+    },
+    {
+      "id": "node-23",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "valve-23",
+      "attributes": {},
+      "bbox_2d": [
+        0.36904,
+        0.21098,
+        0.01191,
+        0.0103
+      ],
+      "confidence": 0.185
+    },
+    {
+      "id": "node-24",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "valve-24",
+      "attributes": {},
+      "bbox_2d": [
+        0.30238,
+        0.23929,
+        0.01419,
+        0.01266
+      ],
+      "confidence": 0.152
+    },
+    {
+      "id": "node-25",
+      "type": "instrument",
+      "sub_type": "instrument.primary_accessible_discrete.iso",
+      "tag": "instrument-25",
+      "attributes": {},
+      "bbox_2d": [
+        0.42848,
+        0.23824,
+        0.01734,
+        0.02772
+      ],
+      "confidence": 0.209
+    },
+    {
+      "id": "node-26",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-26",
+      "attributes": {},
+      "bbox_2d": [
+        0.42857,
+        0.23842,
+        0.01718,
+        0.02739
+      ],
+      "confidence": 0.447
+    },
+    {
+      "id": "node-27",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-27",
+      "attributes": {},
+      "bbox_2d": [
+        0.50888,
+        0.23765,
+        0.01718,
+        0.02808
+      ],
+      "confidence": 0.75
+    },
+    {
+      "id": "node-28",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-28",
+      "attributes": {},
+      "bbox_2d": [
+        0.50923,
+        0.23723,
+        0.017,
+        0.02581
+      ],
+      "confidence": 0.361
+    },
+    {
+      "id": "node-29",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-29",
+      "attributes": {},
+      "bbox_2d": [
+        0.54673,
+        0.23798,
+        0.01516,
+        0.0217
+      ],
+      "confidence": 0.907
+    },
+    {
+      "id": "node-30",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-30",
+      "attributes": {},
+      "bbox_2d": [
+        0.66682,
+        0.23814,
+        0.00528,
+        0.01397
+      ],
+      "confidence": 0.461
+    },
+    {
+      "id": "node-31",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "KZ-8367",
+      "attributes": {},
+      "bbox_2d": [
+        0.70528,
+        0.23525,
+        0.01667,
+        0.02665
+      ],
+      "confidence": 0.383
+    },
+    {
+      "id": "node-32",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-32",
+      "attributes": {},
+      "bbox_2d": [
+        0.7059,
+        0.23702,
+        0.01757,
+        0.02933
+      ],
+      "confidence": 0.34
+    },
+    {
+      "id": "node-33",
+      "type": "fitting",
+      "sub_type": "fitting.closed_fig8_blind.pip",
+      "tag": "fitting-33",
+      "attributes": {},
+      "bbox_2d": [
+        0.34157,
+        0.2474,
+        0.00614,
+        0.03112
+      ],
+      "confidence": 0.247
+    },
+    {
+      "id": "node-34",
+      "type": "valve",
+      "sub_type": "valve.butterfly.pip",
+      "tag": "valve-34",
+      "attributes": {},
+      "bbox_2d": [
+        0.60695,
+        0.2774,
+        0.00739,
+        0.01858
+      ],
+      "confidence": 0.166
+    },
+    {
+      "id": "node-35",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "AB-3243",
+      "attributes": {},
+      "bbox_2d": [
+        0.60725,
+        0.28012,
+        0.00778,
+        0.01782
+      ],
+      "confidence": 0.539
+    },
+    {
+      "id": "node-36",
+      "type": "valve",
+      "sub_type": "valve.diaphragm.niso",
+      "tag": "QR-22830",
+      "attributes": {},
+      "bbox_2d": [
+        0.34618,
+        0.29707,
+        0.01557,
+        0.01105
+      ],
+      "confidence": 0.366
+    },
+    {
+      "id": "node-37",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-37",
+      "attributes": {},
+      "bbox_2d": [
+        0.38666,
+        0.29945,
+        0.01153,
+        0.01561
+      ],
+      "confidence": 0.455
+    },
+    {
+      "id": "node-38",
+      "type": "valve",
+      "sub_type": "valve.globe.niso",
+      "tag": "valve-38",
+      "attributes": {},
+      "bbox_2d": [
+        0.42465,
+        0.30037,
+        0.01387,
+        0.01247
+      ],
+      "confidence": 0.647
+    },
+    {
+      "id": "node-39",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-39",
+      "attributes": {},
+      "bbox_2d": [
+        0.53357,
+        0.3005,
+        0.00409,
+        0.01523
+      ],
+      "confidence": 0.495
+    },
+    {
+      "id": "node-40",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-40",
+      "attributes": {},
+      "bbox_2d": [
+        0.62157,
+        0.30065,
+        0.0065,
+        0.02449
+      ],
+      "confidence": 0.444
+    },
+    {
+      "id": "node-41",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-41",
+      "attributes": {},
+      "bbox_2d": [
+        0.62757,
+        0.30088,
+        0.01739,
+        0.02623
+      ],
+      "confidence": 0.449
+    },
+    {
+      "id": "node-42",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "WX-37672",
+      "attributes": {},
+      "bbox_2d": [
+        0.69852,
+        0.30014,
+        0.01569,
+        0.01271
+      ],
+      "confidence": 0.495
+    },
+    {
+      "id": "node-43",
+      "type": "unknown",
+      "sub_type": "equipment.heat_exchanger.iso",
+      "tag": "heat-exchanger-43",
+      "attributes": {},
+      "bbox_2d": [
+        0.32992,
+        0.32907,
+        0.01652,
+        0.0118
+      ],
+      "confidence": 0.437
+    },
+    {
+      "id": "node-44",
+      "type": "unknown",
+      "sub_type": "piping_insulation.niso",
+      "tag": "insulation-44",
+      "attributes": {},
+      "bbox_2d": [
+        0.33168,
+        0.32732,
+        0.01787,
+        0.00921
+      ],
+      "confidence": 0.203
+    },
+    {
+      "id": "node-45",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "valve-45",
+      "attributes": {},
+      "bbox_2d": [
+        0.40825,
+        0.33494,
+        0.00743,
+        0.01699
+      ],
+      "confidence": 0.315
+    },
+    {
+      "id": "node-46",
+      "type": "valve",
+      "sub_type": "valve.butterfly.pip",
+      "tag": "valve-46",
+      "attributes": {},
+      "bbox_2d": [
+        0.40864,
+        0.33292,
+        0.00677,
+        0.01782
+      ],
+      "confidence": 0.216
+    },
+    {
+      "id": "node-47",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "valve-47",
+      "attributes": {},
+      "bbox_2d": [
+        0.60722,
+        0.32706,
+        0.00736,
+        0.01665
+      ],
+      "confidence": 0.156
+    },
+    {
+      "id": "node-48",
+      "type": "valve",
+      "sub_type": "valve.half_filled_gate.niso",
+      "tag": "KL-48856",
+      "attributes": {},
+      "bbox_2d": [
+        0.60728,
+        0.32713,
+        0.00731,
+        0.017
+      ],
+      "confidence": 0.211
+    },
+    {
+      "id": "node-49",
+      "type": "fitting",
+      "sub_type": "fitting.paddle_blind.niso",
+      "tag": "fitting-49",
+      "attributes": {},
+      "bbox_2d": [
+        0.68998,
+        0.34763,
+        0.01678,
+        0.01244
+      ],
+      "confidence": 0.165
+    },
+    {
+      "id": "node-50",
+      "type": "valve",
+      "sub_type": "valve.globe.iso",
+      "tag": "EF-87386",
+      "attributes": {},
+      "bbox_2d": [
+        0.10582,
+        0.36494,
+        0.01196,
+        0.01671
+      ],
+      "confidence": 0.153
+    },
+    {
+      "id": "node-51",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "valve-51",
+      "attributes": {},
+      "bbox_2d": [
+        0.10611,
+        0.3635,
+        0.0117,
+        0.01242
+      ],
+      "confidence": 0.419
+    },
+    {
+      "id": "node-52",
+      "type": "instrument",
+      "sub_type": "instrument.primary_accessible_discrete.iso",
+      "tag": "instrument-52",
+      "attributes": {},
+      "bbox_2d": [
+        0.22974,
+        0.36281,
+        0.01726,
+        0.02705
+      ],
+      "confidence": 0.303
+    },
+    {
+      "id": "node-53",
+      "type": "instrument",
+      "sub_type": "instrument.aux_accessible_discrete.iso",
+      "tag": "instrument-53",
+      "attributes": {},
+      "bbox_2d": [
+        0.23002,
+        0.36291,
+        0.01771,
+        0.02825
+      ],
+      "confidence": 0.351
+    },
+    {
+      "id": "node-54",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "SD-9159",
+      "attributes": {},
+      "bbox_2d": [
+        0.2306,
+        0.36112,
+        0.0179,
+        0.02686
+      ],
+      "confidence": 0.356
+    },
+    {
+      "id": "node-55",
+      "type": "valve",
+      "sub_type": "valve.needle.niso",
+      "tag": "ST-81697",
+      "attributes": {},
+      "bbox_2d": [
+        0.38136,
+        0.36464,
+        0.01204,
+        0.01762
+      ],
+      "confidence": 0.166
+    },
+    {
+      "id": "node-56",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "WX-12836",
+      "attributes": {},
+      "bbox_2d": [
+        0.42787,
+        0.36315,
+        0.01034,
+        0.0122
+      ],
+      "confidence": 0.594
+    },
+    {
+      "id": "node-57",
+      "type": "valve",
+      "sub_type": "valve.globe.iso",
+      "tag": "KL-25244",
+      "attributes": {},
+      "bbox_2d": [
+        0.62422,
+        0.36276,
+        0.01436,
+        0.01314
+      ],
+      "confidence": 0.166
+    },
+    {
+      "id": "node-58",
+      "type": "valve",
+      "sub_type": "valve.globe.iso",
+      "tag": "valve-58",
+      "attributes": {},
+      "bbox_2d": [
+        0.32834,
+        0.38208,
+        0.00806,
+        0.01905
+      ],
+      "confidence": 0.16
+    },
+    {
+      "id": "node-59",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-59",
+      "attributes": {},
+      "bbox_2d": [
+        0.40831,
+        0.37855,
+        0.01387,
+        0.01811
+      ],
+      "confidence": 0.788
+    },
+    {
+      "id": "node-60",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "valve-60",
+      "attributes": {},
+      "bbox_2d": [
+        0.28936,
+        0.40207,
+        0.00725,
+        0.01858
+      ],
+      "confidence": 0.383
+    },
+    {
+      "id": "node-61",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-61",
+      "attributes": {},
+      "bbox_2d": [
+        0.68638,
+        0.39553,
+        0.01693,
+        0.02693
+      ],
+      "confidence": 0.668
+    },
+    {
+      "id": "node-62",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "OP-81311",
+      "attributes": {},
+      "bbox_2d": [
+        0.68674,
+        0.39593,
+        0.0164,
+        0.02619
+      ],
+      "confidence": 0.791
+    },
+    {
+      "id": "node-63",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "CS-63",
+      "attributes": {},
+      "bbox_2d": [
+        0.36799,
+        0.40637,
+        0.00824,
+        0.01318
+      ],
+      "confidence": 0.617
+    },
+    {
+      "id": "node-64",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "CD-58076",
+      "attributes": {},
+      "bbox_2d": [
+        0.11044,
+        0.42528,
+        0.01363,
+        0.01402
+      ],
+      "confidence": 0.179
+    },
+    {
+      "id": "node-65",
+      "type": "valve",
+      "sub_type": "valve.globe.niso",
+      "tag": "valve-65",
+      "attributes": {},
+      "bbox_2d": [
+        0.11057,
+        0.42531,
+        0.01385,
+        0.01215
+      ],
+      "confidence": 0.394
+    },
+    {
+      "id": "node-66",
+      "type": "valve",
+      "sub_type": "valve.half_filled_gate.niso",
+      "tag": "KL-25244",
+      "attributes": {},
+      "bbox_2d": [
+        0.18662,
+        0.42581,
+        0.01372,
+        0.01161
+      ],
+      "confidence": 0.202
+    },
+    {
+      "id": "node-67",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "EF-96228",
+      "attributes": {},
+      "bbox_2d": [
+        0.26871,
+        0.4251,
+        0.01571,
+        0.02513
+      ],
+      "confidence": 0.848
+    },
+    {
+      "id": "node-68",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-68",
+      "attributes": {},
+      "bbox_2d": [
+        0.66346,
+        0.42577,
+        0.01501,
+        0.01276
+      ],
+      "confidence": 0.266
+    },
+    {
+      "id": "node-69",
+      "type": "valve",
+      "sub_type": "valve.check.niso",
+      "tag": "valve-69",
+      "attributes": {},
+      "bbox_2d": [
+        0.66457,
+        0.4275,
+        0.01177,
+        0.01103
+      ],
+      "confidence": 0.288
+    },
+    {
+      "id": "node-70",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-70",
+      "attributes": {},
+      "bbox_2d": [
+        0.2883,
+        0.45537,
+        0.01555,
+        0.02483
+      ],
+      "confidence": 0.924
+    },
+    {
+      "id": "node-71",
+      "type": "unknown",
+      "sub_type": "piping_insulation.niso",
+      "tag": "6-FU-9356",
+      "attributes": {},
+      "bbox_2d": [
+        0.60682,
+        0.4554,
+        0.00983,
+        0.02553
+      ],
+      "confidence": 0.35
+    },
+    {
+      "id": "node-72",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-72",
+      "attributes": {},
+      "bbox_2d": [
+        0.64672,
+        0.45864,
+        0.01707,
+        0.02624
+      ],
+      "confidence": 0.409
+    },
+    {
+      "id": "node-73",
+      "type": "fitting",
+      "sub_type": "fittings.flow_arrow.niso",
+      "tag": "flow-arrow-73",
+      "attributes": {},
+      "bbox_2d": [
+        0.34862,
+        0.48797,
+        0.00705,
+        0.00872
+      ],
+      "confidence": 0.479
+    },
+    {
+      "id": "node-74",
+      "type": "valve",
+      "sub_type": "valve.globe.niso",
+      "tag": "IJ-76445",
+      "attributes": {},
+      "bbox_2d": [
+        0.47025,
+        0.48847,
+        0.01157,
+        0.01205
+      ],
+      "confidence": 0.276
+    },
+    {
+      "id": "node-75",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "valve-75",
+      "attributes": {},
+      "bbox_2d": [
+        0.36818,
+        0.50758,
+        0.00645,
+        0.01978
+      ],
+      "confidence": 0.319
+    },
+    {
+      "id": "node-76",
+      "type": "valve",
+      "sub_type": "valve.globe_nc.iso",
+      "tag": "valve-76",
+      "attributes": {},
+      "bbox_2d": [
+        0.56693,
+        0.5062,
+        0.00746,
+        0.01282
+      ],
+      "confidence": 0.173
+    },
+    {
+      "id": "node-77",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "RV-70731",
+      "attributes": {},
+      "bbox_2d": [
+        0.56756,
+        0.50676,
+        0.00712,
+        0.01166
+      ],
+      "confidence": 0.659
+    },
+    {
+      "id": "node-78",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "AV-81446",
+      "attributes": {},
+      "bbox_2d": [
+        0.6858,
+        0.51208,
+        0.00917,
+        0.02614
+      ],
+      "confidence": 0.48
+    },
+    {
+      "id": "node-79",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "MN-37119",
+      "attributes": {},
+      "bbox_2d": [
+        0.28941,
+        0.52676,
+        0.00828,
+        0.02051
+      ],
+      "confidence": 0.169
+    },
+    {
+      "id": "node-80",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "valve-80",
+      "attributes": {},
+      "bbox_2d": [
+        0.32906,
+        0.52687,
+        0.00774,
+        0.01763
+      ],
+      "confidence": 0.361
+    },
+    {
+      "id": "node-81",
+      "type": "unknown",
+      "sub_type": "piping_insulation.niso",
+      "tag": "ERV-S-40",
+      "attributes": {},
+      "bbox_2d": [
+        0.20535,
+        0.53944,
+        0.01765,
+        0.02044
+      ],
+      "confidence": 0.158
+    },
+    {
+      "id": "node-82",
+      "type": "unknown",
+      "sub_type": "unknown.sight_glass.niso",
+      "tag": "sight-glass-82",
+      "attributes": {},
+      "bbox_2d": [
+        0.11259,
+        0.55013,
+        0.01148,
+        0.01606
+      ],
+      "confidence": 0.627
+    },
+    {
+      "id": "node-83",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "UV-50437",
+      "attributes": {},
+      "bbox_2d": [
+        0.18659,
+        0.54991,
+        0.01359,
+        0.01073
+      ],
+      "confidence": 0.415
+    },
+    {
+      "id": "node-84",
+      "type": "unknown",
+      "sub_type": "unknown.sight_glass.niso",
+      "tag": "sight-glass-84",
+      "attributes": {},
+      "bbox_2d": [
+        0.30043,
+        0.54918,
+        0.00957,
+        0.01031
+      ],
+      "confidence": 0.284
+    },
+    {
+      "id": "node-85",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "CD-33393",
+      "attributes": {},
+      "bbox_2d": [
+        0.38637,
+        0.55057,
+        0.0122,
+        0.01089
+      ],
+      "confidence": 0.386
+    },
+    {
+      "id": "node-86",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-86",
+      "attributes": {},
+      "bbox_2d": [
+        0.62236,
+        0.54941,
+        0.0051,
+        0.02686
+      ],
+      "confidence": 0.193
+    },
+    {
+      "id": "node-87",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-87",
+      "attributes": {},
+      "bbox_2d": [
+        0.62711,
+        0.54948,
+        0.01602,
+        0.025
+      ],
+      "confidence": 0.591
+    },
+    {
+      "id": "node-88",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-88",
+      "attributes": {},
+      "bbox_2d": [
+        0.62864,
+        0.5491,
+        0.01859,
+        0.02608
+      ],
+      "confidence": 0.175
+    },
+    {
+      "id": "node-89",
+      "type": "valve",
+      "sub_type": "valve.needle.niso",
+      "tag": "valve-89",
+      "attributes": {},
+      "bbox_2d": [
+        0.0907,
+        0.58267,
+        0.01189,
+        0.02241
+      ],
+      "confidence": 0.253
+    },
+    {
+      "id": "node-90",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-90",
+      "attributes": {},
+      "bbox_2d": [
+        0.09137,
+        0.58159,
+        0.01352,
+        0.02039
+      ],
+      "confidence": 0.205
+    },
+    {
+      "id": "node-91",
+      "type": "valve",
+      "sub_type": "valve.globe_nc.iso",
+      "tag": "valve-91",
+      "attributes": {},
+      "bbox_2d": [
+        0.40813,
+        0.58047,
+        0.00813,
+        0.01934
+      ],
+      "confidence": 0.348
+    },
+    {
+      "id": "node-92",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "IJ-32262",
+      "attributes": {},
+      "bbox_2d": [
+        0.40882,
+        0.58107,
+        0.00631,
+        0.01711
+      ],
+      "confidence": 0.187
+    },
+    {
+      "id": "node-93",
+      "type": "valve",
+      "sub_type": "valve.globe.iso",
+      "tag": "valve-93",
+      "attributes": {},
+      "bbox_2d": [
+        0.44735,
+        0.58113,
+        0.00883,
+        0.0181
+      ],
+      "confidence": 0.156
+    },
+    {
+      "id": "node-94",
+      "type": "valve",
+      "sub_type": "valve.butterfly.pip",
+      "tag": "valve-94",
+      "attributes": {},
+      "bbox_2d": [
+        0.44807,
+        0.58145,
+        0.0077,
+        0.01797
+      ],
+      "confidence": 0.248
+    },
+    {
+      "id": "node-95",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "valve-95",
+      "attributes": {},
+      "bbox_2d": [
+        0.60651,
+        0.58408,
+        0.00746,
+        0.02
+      ],
+      "confidence": 0.44
+    },
+    {
+      "id": "node-96",
+      "type": "fitting",
+      "sub_type": "fitting.closed_fig8_blind.pip",
+      "tag": "fitting-96",
+      "attributes": {},
+      "bbox_2d": [
+        0.69168,
+        0.58497,
+        0.02372,
+        0.01022
+      ],
+      "confidence": 0.478
+    },
+    {
+      "id": "node-97",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "valve-97",
+      "attributes": {},
+      "bbox_2d": [
+        0.69712,
+        0.58499,
+        0.0117,
+        0.01004
+      ],
+      "confidence": 0.218
+    },
+    {
+      "id": "node-98",
+      "type": "valve",
+      "sub_type": "valve.globe_nc.iso",
+      "tag": "valve-98",
+      "attributes": {},
+      "bbox_2d": [
+        0.60702,
+        0.58641,
+        0.00793,
+        0.01976
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": "node-99",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "valve-99",
+      "attributes": {},
+      "bbox_2d": [
+        0.56732,
+        0.59866,
+        0.00775,
+        0.01172
+      ],
+      "confidence": 0.59
+    },
+    {
+      "id": "node-100",
+      "type": "valve",
+      "sub_type": "valve.globe_nc.iso",
+      "tag": "6-TM-2383",
+      "attributes": {},
+      "bbox_2d": [
+        0.56769,
+        0.59517,
+        0.00848,
+        0.01359
+      ],
+      "confidence": 0.163
+    },
+    {
+      "id": "node-101",
+      "type": "fitting",
+      "sub_type": "fittings.flow_arrow.niso",
+      "tag": "flow-arrow-101",
+      "attributes": {},
+      "bbox_2d": [
+        0.26223,
+        0.61234,
+        0.00813,
+        0.00949
+      ],
+      "confidence": 0.352
+    },
+    {
+      "id": "node-102",
+      "type": "fitting",
+      "sub_type": "fittings.flow_arrow.niso",
+      "tag": "flow-arrow-102",
+      "attributes": {},
+      "bbox_2d": [
+        0.26479,
+        0.61277,
+        0.008,
+        0.01133
+      ],
+      "confidence": 0.588
+    },
+    {
+      "id": "node-103",
+      "type": "valve",
+      "sub_type": "valve.globe.iso",
+      "tag": "valve-103",
+      "attributes": {},
+      "bbox_2d": [
+        0.34907,
+        0.61287,
+        0.01296,
+        0.01153
+      ],
+      "confidence": 0.217
+    },
+    {
+      "id": "node-104",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "KL-92795",
+      "attributes": {},
+      "bbox_2d": [
+        0.34908,
+        0.61456,
+        0.01216,
+        0.01114
+      ],
+      "confidence": 0.352
+    },
+    {
+      "id": "node-105",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "ERV-T-54",
+      "attributes": {},
+      "bbox_2d": [
+        0.58223,
+        0.61236,
+        0.01314,
+        0.01744
+      ],
+      "confidence": 0.574
+    },
+    {
+      "id": "node-106",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "valve-106",
+      "attributes": {},
+      "bbox_2d": [
+        0.32868,
+        0.62795,
+        0.00686,
+        0.00921
+      ],
+      "confidence": 0.483
+    },
+    {
+      "id": "node-107",
+      "type": "fitting",
+      "sub_type": "fittings.flow_arrow.niso",
+      "tag": "flow-arrow-107",
+      "attributes": {},
+      "bbox_2d": [
+        0.32916,
+        0.6263,
+        0.00819,
+        0.0106
+      ],
+      "confidence": 0.37
+    },
+    {
+      "id": "node-108",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-108",
+      "attributes": {},
+      "bbox_2d": [
+        0.44763,
+        0.6413,
+        0.01815,
+        0.02881
+      ],
+      "confidence": 0.583
+    },
+    {
+      "id": "node-109",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "valve-109",
+      "attributes": {},
+      "bbox_2d": [
+        0.56711,
+        0.64906,
+        0.00818,
+        0.02015
+      ],
+      "confidence": 0.505
+    },
+    {
+      "id": "node-110",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-110",
+      "attributes": {},
+      "bbox_2d": [
+        0.647,
+        0.65459,
+        0.00823,
+        0.01268
+      ],
+      "confidence": 0.639
+    },
+    {
+      "id": "node-111",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "instrument-111",
+      "attributes": {},
+      "bbox_2d": [
+        0.36791,
+        0.70341,
+        0.01738,
+        0.02587
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": "node-112",
+      "type": "unknown",
+      "sub_type": "unknown.box.niso",
+      "tag": "unknown-112",
+      "attributes": {},
+      "bbox_2d": [
+        0.56638,
+        0.705,
+        0.01732,
+        0.02875
+      ],
+      "confidence": 0.326
+    },
+    {
+      "id": "node-113",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-113",
+      "attributes": {},
+      "bbox_2d": [
+        0.56687,
+        0.70394,
+        0.01644,
+        0.02945
+      ],
+      "confidence": 0.662
+    },
+    {
+      "id": "node-114",
+      "type": "unknown",
+      "sub_type": "piping_insulation.niso",
+      "tag": "INS-114",
+      "attributes": {},
+      "bbox_2d": [
+        0.1298,
+        0.70656,
+        0.00916,
+        0.03596
+      ],
+      "confidence": 0.648
+    },
+    {
+      "id": "node-115",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-115",
+      "attributes": {},
+      "bbox_2d": [
+        0.68599,
+        0.71056,
+        0.0124,
+        0.01994
+      ],
+      "confidence": 0.369
+    },
+    {
+      "id": "node-116",
+      "type": "instrument",
+      "sub_type": "instrument.primary_accessible_discrete.iso",
+      "tag": "instrument-116",
+      "attributes": {},
+      "bbox_2d": [
+        0.6862,
+        0.71045,
+        0.01258,
+        0.0205
+      ],
+      "confidence": 0.236
+    },
+    {
+      "id": "node-117",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "valve-117",
+      "attributes": {},
+      "bbox_2d": [
+        0.14624,
+        0.73744,
+        0.00758,
+        0.01165
+      ],
+      "confidence": 0.571
+    },
+    {
+      "id": "node-118",
+      "type": "unknown",
+      "sub_type": "piping_insulation.niso",
+      "tag": "INS-118",
+      "attributes": {},
+      "bbox_2d": [
+        0.1913,
+        0.736,
+        0.01098,
+        0.01833
+      ],
+      "confidence": 0.173
+    },
+    {
+      "id": "node-119",
+      "type": "valve",
+      "sub_type": "valve.globe.niso",
+      "tag": "valve-119",
+      "attributes": {},
+      "bbox_2d": [
+        0.19188,
+        0.73803,
+        0.01197,
+        0.01117
+      ],
+      "confidence": 0.354
+    },
+    {
+      "id": "node-120",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-120",
+      "attributes": {},
+      "bbox_2d": [
+        0.30931,
+        0.7385,
+        0.00684,
+        0.0162
+      ],
+      "confidence": 0.375
+    },
+    {
+      "id": "node-121",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "valve-121",
+      "attributes": {},
+      "bbox_2d": [
+        0.08233,
+        0.76288,
+        0.01606,
+        0.0095
+      ],
+      "confidence": 0.291
+    },
+    {
+      "id": "node-122",
+      "type": "fitting",
+      "sub_type": "fitting.open_fig8_blind.pip",
+      "tag": "fitting-122",
+      "attributes": {},
+      "bbox_2d": [
+        0.08491,
+        0.76351,
+        0.02314,
+        0.0084
+      ],
+      "confidence": 0.274
+    },
+    {
+      "id": "node-123",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-123",
+      "attributes": {},
+      "bbox_2d": [
+        0.20902,
+        0.76328,
+        0.01166,
+        0.01791
+      ],
+      "confidence": 0.2
+    },
+    {
+      "id": "node-124",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-124",
+      "attributes": {},
+      "bbox_2d": [
+        0.64621,
+        0.77008,
+        0.01649,
+        0.02469
+      ],
+      "confidence": 0.746
+    },
+    {
+      "id": "node-125",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "ERV-S-57",
+      "attributes": {},
+      "bbox_2d": [
+        0.24859,
+        0.77781,
+        0.00933,
+        0.02041
+      ],
+      "confidence": 0.237
+    },
+    {
+      "id": "node-126",
+      "type": "fitting",
+      "sub_type": "fitting.open_fig8_blind.pip",
+      "tag": "fitting-126",
+      "attributes": {},
+      "bbox_2d": [
+        0.12097,
+        0.78784,
+        0.00667,
+        0.02732
+      ],
+      "confidence": 0.316
+    },
+    {
+      "id": "node-127",
+      "type": "valve",
+      "sub_type": "valve.ball.niso",
+      "tag": "CD-07210",
+      "attributes": {},
+      "bbox_2d": [
+        0.14279,
+        0.80124,
+        0.01394,
+        0.01034
+      ],
+      "confidence": 0.371
+    },
+    {
+      "id": "node-128",
+      "type": "instrument",
+      "sub_type": "instrument.aux_accessible_discrete.iso",
+      "tag": "instrument-128",
+      "attributes": {},
+      "bbox_2d": [
+        0.22854,
+        0.80085,
+        0.0163,
+        0.02531
+      ],
+      "confidence": 0.273
+    },
+    {
+      "id": "node-129",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-129",
+      "attributes": {},
+      "bbox_2d": [
+        0.22892,
+        0.80096,
+        0.01655,
+        0.02695
+      ],
+      "confidence": 0.21
+    },
+    {
+      "id": "node-130",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-130",
+      "attributes": {},
+      "bbox_2d": [
+        0.27014,
+        0.79955,
+        0.0172,
+        0.02747
+      ],
+      "confidence": 0.445
+    },
+    {
+      "id": "node-131",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-131",
+      "attributes": {},
+      "bbox_2d": [
+        0.30879,
+        0.79905,
+        0.00529,
+        0.01385
+      ],
+      "confidence": 0.605
+    },
+    {
+      "id": "node-132",
+      "type": "valve",
+      "sub_type": "valve.check.niso",
+      "tag": "valve-132",
+      "attributes": {},
+      "bbox_2d": [
+        0.66972,
+        0.79915,
+        0.01179,
+        0.01163
+      ],
+      "confidence": 0.215
+    },
+    {
+      "id": "node-133",
+      "type": "unknown",
+      "sub_type": "equipment.heat_exchanger.iso",
+      "tag": "heat-exchanger-133",
+      "attributes": {},
+      "bbox_2d": [
+        0.60685,
+        0.83164,
+        0.0091,
+        0.00975
+      ],
+      "confidence": 0.169
+    },
+    {
+      "id": "node-134",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-134",
+      "attributes": {},
+      "bbox_2d": [
+        0.60717,
+        0.82991,
+        0.00985,
+        0.01055
+      ],
+      "confidence": 0.456
+    },
+    {
+      "id": "node-135",
+      "type": "valve",
+      "sub_type": "valve.globe_nc.iso",
+      "tag": "valve-135",
+      "attributes": {},
+      "bbox_2d": [
+        0.6869,
+        0.82784,
+        0.00721,
+        0.02193
+      ],
+      "confidence": 0.881
+    },
+    {
+      "id": "node-136",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "WX-48735",
+      "attributes": {},
+      "bbox_2d": [
+        0.24939,
+        0.84251,
+        0.00806,
+        0.0235
+      ],
+      "confidence": 0.524
+    },
+    {
+      "id": "node-137",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-137",
+      "attributes": {},
+      "bbox_2d": [
+        0.5858,
+        0.86205,
+        0.01809,
+        0.02865
+      ],
+      "confidence": 0.598
+    },
+    {
+      "id": "node-138",
+      "type": "fitting",
+      "sub_type": "fitting.primary_accessible_dcs.iso",
+      "tag": "fitting-138",
+      "attributes": {},
+      "bbox_2d": [
+        0.58588,
+        0.86248,
+        0.01717,
+        0.02652
+      ],
+      "confidence": 0.888
+    },
+    {
+      "id": "node-139",
+      "type": "valve",
+      "sub_type": "valve.general.iso",
+      "tag": "valve-139",
+      "attributes": {},
+      "bbox_2d": [
+        0.60658,
+        0.88193,
+        0.0084,
+        0.0216
+      ],
+      "confidence": 0.402
+    },
+    {
+      "id": "node-140",
+      "type": "fitting",
+      "sub_type": "fitting.flange.iso",
+      "tag": "flange-140",
+      "attributes": {},
+      "bbox_2d": [
+        0.08975,
+        0.90196,
+        0.00943,
+        0.00633
+      ],
+      "confidence": 0.759
+    },
+    {
+      "id": "node-141",
+      "type": "instrument",
+      "sub_type": "instrument.aux_accessible_discrete.iso",
+      "tag": "OP-57247",
+      "attributes": {},
+      "bbox_2d": [
+        0.36818,
+        0.89638,
+        0.01814,
+        0.02632
+      ],
+      "confidence": 0.299
+    },
+    {
+      "id": "node-142",
+      "type": "instrument",
+      "sub_type": "instrument.field_discrete.iso",
+      "tag": "instrument-142",
+      "attributes": {},
+      "bbox_2d": [
+        0.36835,
+        0.89756,
+        0.01693,
+        0.02646
+      ],
+      "confidence": 0.344
+    },
+    {
+      "id": "node-143",
+      "type": "fitting",
+      "sub_type": "fitting.paddle_blind.niso",
+      "tag": "6-SV-4243",
+      "attributes": {},
+      "bbox_2d": [
+        0.65092,
+        0.89906,
+        0.01796,
+        0.01215
+      ],
+      "confidence": 0.166
+    },
+    {
+      "id": "node-144",
+      "type": "valve",
+      "sub_type": "valve.general_nc.iso",
+      "tag": "ST-93826",
+      "attributes": {},
+      "bbox_2d": [
+        0.31463,
+        0.92392,
+        0.01497,
+        0.01176
+      ],
+      "confidence": 0.183
+    },
+    {
+      "id": "node-145",
+      "type": "valve",
+      "sub_type": "valve.ball_nc.niso",
+      "tag": "RV-22943",
+      "attributes": {},
+      "bbox_2d": [
+        0.18629,
+        0.92566,
+        0.00912,
+        0.01279
+      ],
+      "confidence": 0.617
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "type": "unknown",
+      "from": "node-2",
+      "to": "node-3",
+      "attributes": {
+        "medium": "water_chilled"
+      },
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-2",
+      "type": "unknown",
+      "from": "node-3",
+      "to": "node-9",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-3",
+      "type": "unknown",
+      "from": "node-4",
+      "to": "node-5",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-4",
+      "type": "unknown",
+      "from": "node-5",
+      "to": "node-6",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-5",
+      "type": "unknown",
+      "from": "node-6",
+      "to": "node-7",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-6",
+      "type": "unknown",
+      "from": "node-7",
+      "to": "node-8",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-7",
+      "type": "unknown",
+      "from": "node-8",
+      "to": "node-13",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-8",
+      "type": "unknown",
+      "from": "node-13",
+      "to": "node-14",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-9",
+      "type": "unknown",
+      "from": "node-14",
+      "to": "node-15",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-10",
+      "type": "unknown",
+      "from": "node-10",
+      "to": "node-11",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-11",
+      "type": "unknown",
+      "from": "node-15",
+      "to": "node-16",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-12",
+      "type": "unknown",
+      "from": "node-16",
+      "to": "node-17",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-13",
+      "type": "unknown",
+      "from": "node-17",
+      "to": "node-20",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-14",
+      "type": "unknown",
+      "from": "node-18",
+      "to": "node-19",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-15",
+      "type": "unknown",
+      "from": "node-21",
+      "to": "node-20",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-16",
+      "type": "unknown",
+      "from": "node-22",
+      "to": "node-23",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-17",
+      "type": "unknown",
+      "from": "node-23",
+      "to": "node-24",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-18",
+      "type": "unknown",
+      "from": "node-24",
+      "to": "node-33",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-19",
+      "type": "unknown",
+      "from": "node-25",
+      "to": "node-26",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-20",
+      "type": "unknown",
+      "from": "node-26",
+      "to": "node-27",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-21",
+      "type": "unknown",
+      "from": "node-27",
+      "to": "node-28",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-22",
+      "type": "unknown",
+      "from": "node-28",
+      "to": "node-29",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-23",
+      "type": "unknown",
+      "from": "node-29",
+      "to": "node-30",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-24",
+      "type": "unknown",
+      "from": "node-30",
+      "to": "node-31",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-25",
+      "type": "unknown",
+      "from": "node-31",
+      "to": "node-32",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-26",
+      "type": "unknown",
+      "from": "node-34",
+      "to": "node-35",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-27",
+      "type": "unknown",
+      "from": "node-35",
+      "to": "node-40",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-28",
+      "type": "unknown",
+      "from": "node-40",
+      "to": "node-41",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-29",
+      "type": "unknown",
+      "from": "node-41",
+      "to": "node-42",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-30",
+      "type": "unknown",
+      "from": "node-36",
+      "to": "node-37",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-31",
+      "type": "unknown",
+      "from": "node-37",
+      "to": "node-38",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-32",
+      "type": "unknown",
+      "from": "node-38",
+      "to": "node-39",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-33",
+      "type": "unknown",
+      "from": "node-43",
+      "to": "node-44",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-34",
+      "type": "unknown",
+      "from": "node-44",
+      "to": "node-45",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-35",
+      "type": "unknown",
+      "from": "node-45",
+      "to": "node-46",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-36",
+      "type": "unknown",
+      "from": "node-47",
+      "to": "node-48",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-37",
+      "type": "unknown",
+      "from": "node-50",
+      "to": "node-51",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-38",
+      "type": "unknown",
+      "from": "node-51",
+      "to": "node-52",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-39",
+      "type": "unknown",
+      "from": "node-52",
+      "to": "node-53",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-40",
+      "type": "unknown",
+      "from": "node-53",
+      "to": "node-54",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-41",
+      "type": "unknown",
+      "from": "node-55",
+      "to": "node-56",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-42",
+      "type": "unknown",
+      "from": "node-56",
+      "to": "node-57",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-43",
+      "type": "unknown",
+      "from": "node-58",
+      "to": "node-59",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-44",
+      "type": "unknown",
+      "from": "node-60",
+      "to": "node-63",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-45",
+      "type": "unknown",
+      "from": "node-61",
+      "to": "node-62",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-46",
+      "type": "unknown",
+      "from": "node-64",
+      "to": "node-65",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-47",
+      "type": "unknown",
+      "from": "node-65",
+      "to": "node-66",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-48",
+      "type": "unknown",
+      "from": "node-66",
+      "to": "node-67",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-49",
+      "type": "unknown",
+      "from": "node-67",
+      "to": "node-70",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-50",
+      "type": "unknown",
+      "from": "node-68",
+      "to": "node-69",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-51",
+      "type": "unknown",
+      "from": "node-71",
+      "to": "node-72",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-52",
+      "type": "unknown",
+      "from": "node-73",
+      "to": "node-74",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-53",
+      "type": "unknown",
+      "from": "node-74",
+      "to": "node-75",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-54",
+      "type": "unknown",
+      "from": "node-75",
+      "to": "node-79",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-55",
+      "type": "unknown",
+      "from": "node-76",
+      "to": "node-77",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-56",
+      "type": "unknown",
+      "from": "node-77",
+      "to": "node-78",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-57",
+      "type": "unknown",
+      "from": "node-79",
+      "to": "node-80",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-58",
+      "type": "unknown",
+      "from": "node-80",
+      "to": "node-84",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-59",
+      "type": "unknown",
+      "from": "node-81",
+      "to": "node-82",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-60",
+      "type": "unknown",
+      "from": "node-82",
+      "to": "node-83",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-61",
+      "type": "unknown",
+      "from": "node-85",
+      "to": "node-86",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-62",
+      "type": "unknown",
+      "from": "node-86",
+      "to": "node-87",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-63",
+      "type": "unknown",
+      "from": "node-87",
+      "to": "node-88",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-64",
+      "type": "unknown",
+      "from": "node-89",
+      "to": "node-90",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-65",
+      "type": "unknown",
+      "from": "node-91",
+      "to": "node-92",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-66",
+      "type": "unknown",
+      "from": "node-92",
+      "to": "node-93",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-67",
+      "type": "unknown",
+      "from": "node-93",
+      "to": "node-94",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-68",
+      "type": "unknown",
+      "from": "node-95",
+      "to": "node-98",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-69",
+      "type": "unknown",
+      "from": "node-96",
+      "to": "node-97",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-70",
+      "type": "unknown",
+      "from": "node-99",
+      "to": "node-100",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-71",
+      "type": "unknown",
+      "from": "node-101",
+      "to": "node-102",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-72",
+      "type": "unknown",
+      "from": "node-102",
+      "to": "node-103",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-73",
+      "type": "unknown",
+      "from": "node-103",
+      "to": "node-104",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-74",
+      "type": "unknown",
+      "from": "node-105",
+      "to": "node-109",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-75",
+      "type": "unknown",
+      "from": "node-106",
+      "to": "node-107",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-76",
+      "type": "unknown",
+      "from": "node-107",
+      "to": "node-108",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-77",
+      "type": "unknown",
+      "from": "node-109",
+      "to": "node-110",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-78",
+      "type": "unknown",
+      "from": "node-111",
+      "to": "node-112",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-79",
+      "type": "unknown",
+      "from": "node-112",
+      "to": "node-113",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-80",
+      "type": "unknown",
+      "from": "node-113",
+      "to": "node-115",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-81",
+      "type": "unknown",
+      "from": "node-115",
+      "to": "node-116",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-82",
+      "type": "unknown",
+      "from": "node-114",
+      "to": "node-117",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-83",
+      "type": "unknown",
+      "from": "node-117",
+      "to": "node-118",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-84",
+      "type": "unknown",
+      "from": "node-118",
+      "to": "node-119",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-85",
+      "type": "unknown",
+      "from": "node-119",
+      "to": "node-120",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-86",
+      "type": "unknown",
+      "from": "node-121",
+      "to": "node-122",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-87",
+      "type": "unknown",
+      "from": "node-122",
+      "to": "node-123",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-88",
+      "type": "unknown",
+      "from": "node-123",
+      "to": "node-125",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-89",
+      "type": "unknown",
+      "from": "node-124",
+      "to": "node-132",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-90",
+      "type": "unknown",
+      "from": "node-125",
+      "to": "node-126",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-91",
+      "type": "unknown",
+      "from": "node-126",
+      "to": "node-127",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-92",
+      "type": "unknown",
+      "from": "node-127",
+      "to": "node-128",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-93",
+      "type": "unknown",
+      "from": "node-128",
+      "to": "node-129",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-94",
+      "type": "unknown",
+      "from": "node-129",
+      "to": "node-130",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-95",
+      "type": "unknown",
+      "from": "node-130",
+      "to": "node-131",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-96",
+      "type": "unknown",
+      "from": "node-132",
+      "to": "node-135",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-97",
+      "type": "unknown",
+      "from": "node-133",
+      "to": "node-134",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-98",
+      "type": "unknown",
+      "from": "node-134",
+      "to": "node-137",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-99",
+      "type": "unknown",
+      "from": "node-136",
+      "to": "node-139",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-100",
+      "type": "unknown",
+      "from": "node-137",
+      "to": "node-138",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-101",
+      "type": "unknown",
+      "from": "node-138",
+      "to": "node-139",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-102",
+      "type": "unknown",
+      "from": "node-139",
+      "to": "node-143",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-103",
+      "type": "unknown",
+      "from": "node-140",
+      "to": "node-144",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-104",
+      "type": "unknown",
+      "from": "node-141",
+      "to": "node-142",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-105",
+      "type": "unknown",
+      "from": "node-142",
+      "to": "node-144",
+      "attributes": {},
+      "confidence": 0.7
+    },
+    {
+      "id": "edge-106",
+      "type": "unknown",
+      "from": "node-144",
+      "to": "node-145",
+      "attributes": {},
+      "confidence": 0.7
+    }
+  ]
+}

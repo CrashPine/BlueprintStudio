@@ -1,0 +1,59 @@
+{
+  "diagram_type": "FUSED",
+  "meta": {
+    "name": "Demo Data Centre",
+    "it_power_kW": 500,
+    "facility_power_kW": 750,
+    "pue": 1.5
+  },
+  "spaces": [
+    {
+      "id": "space_data_hall",
+      "label": "Data Hall",
+      "category": "white_space",
+      "area_m2": 1200,
+      "polygon_2d": [[0, 0], [40, 0], [40, 30], [0, 30]]
+    },
+    {
+      "id": "space_electrical",
+      "label": "Electrical Room",
+      "category": "electrical",
+      "area_m2": 80,
+      "polygon_2d": [[40, 0], [50, 0], [50, 20], [40, 20]]
+    },
+    {
+      "id": "space_plant",
+      "label": "Plant Room",
+      "category": "mechanical",
+      "area_m2": 150,
+      "polygon_2d": [[0, 30], [25, 30], [25, 40], [0, 40]]
+    }
+  ],
+  "walls": [],
+  "nodes": [
+    {
+      "id": "node_crac_1",
+      "label": "CRAC-1",
+      "node_type": "crac",
+      "space_id": "space_plant",
+      "bbox_2d": [5, 32, 10, 38],
+      "attributes": { "cooling_kW": 200, "cop": 3.2 }
+    },
+    {
+      "id": "node_ups_1",
+      "label": "UPS-1",
+      "node_type": "ups",
+      "space_id": "space_electrical",
+      "bbox_2d": [42, 5, 48, 15],
+      "attributes": { "power_kW": 500 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_chw_loop",
+      "source": "node_crac_1",
+      "target": "node_ups_1",
+      "edge_type": "chw_supply"
+    }
+  ]
+}

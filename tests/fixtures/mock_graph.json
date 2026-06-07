@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "diagram_id": "demo-01",
+    "diagram_type": "PID",
+    "building_id": null,
+    "source_file": "chiller_plant_demo.png",
+    "image_width": 640,
+    "image_height": 480,
+    "parse_confidence": 0.92
+  },
+  "nodes": [
+    {
+      "id": "N1",
+      "type": "chiller",
+      "sub_type": null,
+      "tag": "CH-1",
+      "attributes": {
+        "rated_power_kW": 350,
+        "annual_energy_kwh": 1260000,
+        "capacity": { "value": 500, "unit": "RT" },
+        "efficiency": { "metric": "COP", "value": 5.2 },
+        "voltage_V": 380,
+        "install_year": 2009,
+        "manufacturer": null,
+        "model": null,
+        "floor": "B2"
+      },
+      "bbox_2d": [0.238, 0.217, 0.1, 0.1],
+      "confidence": 0.95
+    },
+    {
+      "id": "N2",
+      "type": "pump",
+      "sub_type": "equipment.pump.niso",
+      "tag": "CHWP-1",
+      "attributes": {
+        "rated_power_kW": 45,
+        "capacity": { "value": 120, "unit": "L/s" },
+        "install_year": 2009,
+        "floor": "B2"
+      },
+      "bbox_2d": [0.369, 0.242, 0.05, 0.067],
+      "confidence": 0.9
+    },
+    {
+      "id": "N3",
+      "type": "pump",
+      "sub_type": "equipment.pump.niso",
+      "tag": "CHWP-2",
+      "attributes": {
+        "rated_power_kW": 45,
+        "capacity": { "value": 120, "unit": "L/s" },
+        "install_year": 2009,
+        "floor": "B2"
+      },
+      "bbox_2d": [0.369, 0.346, 0.05, 0.067],
+      "confidence": 0.88
+    },
+    {
+      "id": "N4",
+      "type": "cooling_tower",
+      "sub_type": "tower.counterflow_forced_draft.niso",
+      "tag": "CT-1",
+      "attributes": {
+        "rated_power_kW": 22,
+        "install_year": 2009,
+        "floor": "RF"
+      },
+      "bbox_2d": [0.669, 0.183, 0.088, 0.117],
+      "confidence": 0.91
+    },
+    {
+      "id": "N5",
+      "type": "ahu",
+      "sub_type": null,
+      "tag": "AHU-3",
+      "attributes": {
+        "rated_power_kW": 18,
+        "install_year": 2012,
+        "floor": "L1"
+      },
+      "bbox_2d": [0.85, 0.458, 0.075, 0.083],
+      "confidence": 0.87
+    },
+    {
+      "id": "N6",
+      "type": "transformer",
+      "sub_type": null,
+      "tag": "TX-MAIN",
+      "attributes": {
+        "rated_power_kW": 800,
+        "capacity": { "value": 1000, "unit": "kVA" },
+        "voltage_V": 11000,
+        "install_year": 2008,
+        "floor": "B1"
+      },
+      "bbox_2d": [0.1, 0.692, 0.075, 0.133],
+      "confidence": 0.93
+    },
+    {
+      "id": "N7",
+      "type": "breaker",
+      "sub_type": null,
+      "tag": "CB-CHPLANT",
+      "attributes": {
+        "rated_power_kW": 0,
+        "ampacity_A": 800,
+        "voltage_V": 380,
+        "install_year": 2008,
+        "floor": "B1"
+      },
+      "bbox_2d": [0.175, 0.692, 0.038, 0.05],
+      "confidence": 0.94
+    },
+    {
+      "id": "N8",
+      "type": "distribution_panel",
+      "sub_type": null,
+      "tag": "MSB-1",
+      "attributes": {
+        "rated_power_kW": 0,
+        "ampacity_A": 1600,
+        "voltage_V": 380,
+        "install_year": 2008,
+        "floor": "B1"
+      },
+      "bbox_2d": [0.281, 0.696, 0.063, 0.1],
+      "confidence": 0.92
+    },
+    {
+      "id": "N9",
+      "type": "meter",
+      "sub_type": null,
+      "tag": "MTR-MAIN",
+      "attributes": {
+        "rated_power_kW": 0,
+        "install_year": 2015,
+        "floor": "B1"
+      },
+      "bbox_2d": [0.328, 0.677, 0.031, 0.042],
+      "confidence": 0.85
+    }
+  ],
+  "edges": [
+    {
+      "id": "E1",
+      "type": "chw_supply",
+      "from": "N1",
+      "to": "N2",
+      "attributes": { "diameter_mm": 200, "medium": "chilled_water", "flow_lps": 60 },
+      "polyline_2d": [[0.288, 0.217], [0.344, 0.242]],
+      "confidence": 0.9
+    },
+    {
+      "id": "E2",
+      "type": "chw_return",
+      "from": "N2",
+      "to": "N1",
+      "attributes": { "diameter_mm": 200, "medium": "chilled_water", "flow_lps": 60 },
+      "polyline_2d": [[0.369, 0.275], [0.238, 0.25]],
+      "confidence": 0.88
+    },
+    {
+      "id": "E3",
+      "type": "condenser_water",
+      "from": "N1",
+      "to": "N4",
+      "attributes": { "diameter_mm": 250, "medium": "condenser_water", "flow_lps": 80 },
+      "polyline_2d": [[0.288, 0.183], [0.625, 0.183]],
+      "confidence": 0.87
+    },
+    {
+      "id": "E4",
+      "type": "chw_supply",
+      "from": "N2",
+      "to": "N5",
+      "attributes": { "diameter_mm": 150, "medium": "chilled_water", "flow_lps": 30 },
+      "polyline_2d": [[0.394, 0.242], [0.813, 0.458]],
+      "confidence": 0.86
+    },
+    {
+      "id": "E6",
+      "type": "electrical_cable",
+      "from": "N6",
+      "to": "N7",
+      "attributes": { "ampacity_A": 800, "phase": 3, "medium": "electrical" },
+      "polyline_2d": [[0.138, 0.692], [0.156, 0.692]],
+      "confidence": 0.93
+    },
+    {
+      "id": "E7",
+      "type": "electrical_cable",
+      "from": "N7",
+      "to": "N8",
+      "attributes": { "ampacity_A": 800, "phase": 3, "medium": "electrical" },
+      "polyline_2d": [[0.194, 0.692], [0.25, 0.696]],
+      "confidence": 0.92
+    },
+    {
+      "id": "E8",
+      "type": "electrical_cable",
+      "from": "N8",
+      "to": "N1",
+      "attributes": { "ampacity_A": 400, "phase": 3, "medium": "electrical" },
+      "polyline_2d": [[0.281, 0.696], [0.238, 0.217]],
+      "confidence": 0.9
+    },
+    {
+      "id": "E9",
+      "type": "control_signal",
+      "from": "N9",
+      "to": "N8",
+      "attributes": { "medium": "control" },
+      "confidence": 0.8
+    }
+  ]
+}

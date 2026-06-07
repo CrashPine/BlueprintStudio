@@ -1,0 +1,157 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "spaces", "walls", "nodes", "edges"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["diagram_id", "diagram_type", "source_file", "parse_confidence"],
+      "properties": {
+        "diagram_id": { "type": "string" },
+        "diagram_type": { "type": "string", "enum": ["FLOORPLAN", "PID", "SLD", "FUSED"] },
+        "source_file": { "type": "string" },
+        "parse_confidence": { "type": "number" },
+        "title": { "type": "string" },
+        "drawing_number": { "type": "string" },
+        "level": { "type": "string" },
+        "unit_system": { "type": "string", "enum": ["metric", "imperial", "mixed"] },
+        "scale_ratio": { "type": "string" }
+      }
+    },
+    "spaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "category", "polygon_2d", "area_m2", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": [
+              "data_hall", "electrical_room", "plant_room", "mechanical_room", "server_room",
+              "office", "meeting_room", "reception", "lobby", "corridor", "hallway",
+              "stairwell", "elevator", "bedroom", "bathroom", "toilet", "kitchen", "pantry",
+              "living_room", "dining_room", "garage", "storage", "closet", "utility",
+              "laundry", "balcony", "terrace", "patio", "garden", "retail", "classroom",
+              "unknown"
+            ]
+          },
+          "polygon_2d": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "number" } }
+          },
+          "area_m2": { "type": "number" },
+          "width_m": { "type": "number" },
+          "height_m": { "type": "number" },
+          "floor": { "type": "string" },
+          "area_raw": { "type": ["string", "null"] },
+          "dimensions_raw": { "type": ["string", "null"] },
+          "room_number": { "type": ["string", "null"] },
+          "elevation_m": { "type": ["number", "null"] },
+          "habitable": { "type": ["boolean", "null"] },
+          "confidence": { "type": "number" }
+        }
+      }
+    },
+    "walls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "polyline_2d", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "polyline_2d": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "number" } }
+          },
+          "confidence": { "type": "number" }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "sub_type", "tag", "attributes", "bbox_2d", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "instrument", "equipment", "fitting", "valve", "signal", "tower", "unknown",
+              "chiller", "pump", "cooling_tower", "ahu", "fcu", "boiler", "fan",
+              "transformer", "switchgear", "breaker", "distribution_panel", "meter",
+              "sensor",
+              "crac", "crah", "ups", "pdu", "busway", "rack"
+            ]
+          },
+          "sub_type": { "type": "string" },
+          "tag": { "type": "string" },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["rated_power_kW", "voltage_V", "ampacity_A"],
+            "properties": {
+              "rated_power_kW": { "type": "number" },
+              "voltage_V": { "type": "number" },
+              "ampacity_A": { "type": "number" }
+            }
+          },
+          "bbox_2d": {
+            "type": "array",
+            "items": { "type": "number" }
+          },
+          "confidence": { "type": "number" }
+        }
+      }
+    },
+    "handwriting": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text"],
+        "properties": {
+          "text": { "type": "string" },
+          "kind": { "type": "string" },
+          "value_mm": { "type": "number" },
+          "confidence": { "type": "number" }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "from", "to", "attributes", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "chw_supply", "chw_return", "condenser_water", "air_duct",
+              "electrical_cable", "control_signal", "unknown"
+            ]
+          },
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["ampacity_A"],
+            "properties": {
+              "ampacity_A": { "type": "number" }
+            }
+          },
+          "confidence": { "type": "number" }
+        }
+      }
+    }
+  }
+}

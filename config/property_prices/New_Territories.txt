@@ -1,0 +1,75 @@
+| Estate                        | Price (HK$/ft² SFA) | Weekly Change |
+| ----------------------------- | ------------------- | ------------- |
+| Kingswood Villas              | 8,895               | -1.33%        |
+| Park Vista (Park Yoho)        | 11,662              | +2.78%        |
+| Double Cove                   | 14,982              | -4.95%        |
+| The Reach                     | 11,083              | +3.57%        |
+| City One Shatin               | 14,681              | +9.13%        |
+| Park Signature                | 10,750              | +0.05%        |
+| Park Island                   | 10,593              | -9.15%        |
+| Yoho Town Phase 1             | 14,914              | +0.68%        |
+| Yuccie Square                 | 14,960              | +4.78%        |
+| Yoho Midtown                  | 14,243              | -4.45%        |
+| Festival City                 | 17,600              | -1.38%        |
+| The Spectra                   | 13,511              | +2.09%        |
+| Caribbean Coast               | 10,136              | +4.79%        |
+| Ocean Pride                   | 18,352              | -1.94%        |
+| Sunshine City                 | 14,440              | +0.21%        |
+| Century Gateway               | 15,828              | -0.26%        |
+| The Regent                    | 13,102              | +4.95%        |
+| Central Park Towers           | 10,271              | -1.83%        |
+| Belvedere Garden              | 10,700              | +2.57%        |
+| Tai Hing Gardens              | 9,402               | -0.59%        |
+| Providence Bay                | 11,217              | +3.04%        |
+| Tsuen Wan Centre              | 9,803               | -0.17%        |
+| Century Link                  | 12,269              | +0.55%        |
+| The Pavilia Bay               | 18,015              | +0.18%        |
+| Lake Silver                   | 15,682              | +0.84%        |
+| Rambler Crest                 | 11,583              | +8.88%        |
+| Tai Po Centre                 | 12,150              | +0.09%        |
+| Villa Esplanada               | 15,249              | +0.11%        |
+| Hongkong Garden               | 8,333               | +0.29%        |
+| The Parcville                 | 12,156              | +0.05%        |
+| The Met. Blossom              | 13,593              | +0.04%        |
+| Discovery Park                | 13,946              | -0.24%        |
+| Sea Crest Villa               | 9,305               | +2.89%        |
+| Tierra Verde                  | 17,450              | -1.08%        |
+| Bellagio                      | 11,792              | +0.29%        |
+| Parkland Villas               | 11,745              | +4.32%        |
+| Dawning Views                 | 11,664              | +1.44%        |
+| Vista Paradiso                | 12,119              | +0.04%        |
+| Chelsea Court                 | 15,373              | -5.28%        |
+| Coastal Skyline               | 11,941              | -3.9%         |
+| Royal Ascot                   | 13,501              | +7.62%        |
+| Greenfield Garden             | 12,815              | +0.1%         |
+| The Sherwood                  | 9,086               | 0%            |
+| Serenity Park                 | 11,463              | +0.92%        |
+| Tuen Mun Town Plaza           | 11,162              | -4.55%        |
+| The Palazzo                   | 17,856              | +3.67%        |
+| Tsuen King Garden             | 9,727               | -8.97%        |
+| Luk Yeung Sun Chuen           | 12,372              | -0.19%        |
+| Mont Vert                     | 9,947               | +0.1%         |
+| Tung Chung Crescent           | 10,794              | -1.89%        |
+| Le Pont                       | 8,457               | -5.7%         |
+| Sun Tuen Mun Centre           | 8,173               | +0.01%        |
+| Classical Gardens             | 10,123              | +2.7%         |
+| Pictorial Garden              | 11,118              | +3.65%        |
+| Noble Hill                    | 12,038              | +3.72%        |
+| Monte Vista                   | 11,200              | +0.04%        |
+| Riviera Gardens               | 10,906              | -0.19%        |
+| Flora Plaza                   | 11,463              | +0.92%        |
+| The Bloomsway                 | 10,676              | -1.19%        |
+| Golden Lion Garden            | 12,836              | -0.14%        |
+| Royal Green                   | 11,227              | -0.58%        |
+| Hong Kong Gold Coast          | 7,782               | -0.35%        |
+| New Kwai Fong Gardens         | 13,647              | +0.15%        |
+| Shatin Centre                 | 15,937              | +0.31%        |
+| Jubilee Garden                | 11,348              | +0.3%         |
+| Aegean Coast                  | 10,276              | -0.35%        |
+| Avon Park                     | 10,901              | +0.12%        |
+| Mayfair By The Sea            | 12,880              | +6.53%        |
+| Sheung Shui Centre            | 13,293              | +1.56%        |
+| Miami Beach Towers            | 10,084              | +0.01%        |
+| Shatin New Town (Lucky Plaza) | 14,352              | -1.66%        |
+| Garden Rivera                 | 14,486              | +1.38%        |
+| Fanling Centre                | 11,593              | +0.12%        |

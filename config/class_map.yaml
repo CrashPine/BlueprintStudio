@@ -1,0 +1,77 @@
+# Map Kaggle P&ID YOLO class (sub_type) -> engineering type for M3/M4/M5
+# Datacentre extensions: crac, crah, ups, pdu, busway, rack
+# Anything not listed becomes "unknown"
+
+# --- Datacentre / CRAH-CRAC (map blowers + AHU-like equipment) ---
+equipment.centrifugal_blower.pip: crac
+equipment.blower.niso: crac
+equipment.triple_fan_blade.niso: crah
+equipment.axial_compressor.niso: crah
+
+# --- Pumps / chillers / towers (unchanged) ---
+
+equipment.pump.niso: pump
+equipment.horizontal_pump.pip: pump
+equipment.centrifugal_sump.pip: pump
+equipment.screw_pump.niso: pump
+equipment.gear_pump.niso: pump
+equipment.vertical_pump.pip: pump
+equipment.progressive_cavity_pump.pip: pump
+equipment.turbine_pump.niso: pump
+equipment.vacuum_pump.niso: pump
+equipment.vane_pump.niso: pump
+equipment.liquid_ring_vacuum_pump.pip: pump
+
+tower.counterflow_forced_draft.niso: cooling_tower
+tower.counterflow_natural_draft.niso: cooling_tower
+tower.crossflow_inducted.niso: cooling_tower
+tower.chimney.niso: cooling_tower
+tower.packed.niso: cooling_tower
+tower.plate.niso: cooling_tower
+
+equipment.centrifugal_blower.pip: fan
+equipment.blower.niso: fan
+equipment.triple_fan_blade.niso: fan
+
+equipment.heat_exchanger.iso: unknown
+equipment.heat_exchanger_TEMA.pip: unknown
+equipment.tank.niso: unknown
+equipment.drum.niso: unknown
+equipment.furnace.pip: unknown
+equipment.motor.niso: unknown
+equipment.electric_motor.pip: unknown
+equipment.mixer.pip: unknown
+
+valve.globe.iso: valve
+valve.ball.iso: valve
+valve.check.pip: valve
+valve.check.niso: valve
+valve.butterfly.iso: valve
+valve.control.iso: valve
+valve.gate.iso: valve
+valve.general.iso: valve
+valve.plug.iso: valve
+valve.pressure_relief.niso: valve
+valve.pressure_relief.pip: valve
+valve.relief.niso: valve
+valve.diaphragm.niso: valve
+valve.3way_ball.iso: valve
+valve.3way_globe.iso: valve
+
+instrument.flow_meter.niso: meter
+instrument.flow_transmitter.niso: sensor
+instrument.flow_controller.niso: sensor
+instrument.flow_recorder.niso: sensor
+instrument.pressure_gauge.niso: sensor
+instrument.pressure_transmitter.niso: sensor
+instrument.pressure_controller.niso: sensor
+instrument.temperature_transmitter.niso: sensor
+instrument.temperature_controller.niso: sensor
+instrument.level_transmitter.niso: sensor
+instrument.level_controller.niso: sensor
+instrument.general.niso: instrument
+
+signal.pneumatic.iso: control_signal
+fittings.flow_arrow.niso: fitting
+fitting.flange.iso: fitting
+fitting.reducer.iso: fitting
